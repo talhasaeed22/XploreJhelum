@@ -5,10 +5,10 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import { useLocation } from 'react-router-dom'
 import SIgnup from './Components/Auth/SIgnup';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home';
+import Footer from './Components/Footer';
 const App = () => {
   return (
     <>
@@ -26,7 +26,7 @@ const App = () => {
           </Route>
 
         </Routes>
-
+        <Footer/>
       </Router>
 
     </>

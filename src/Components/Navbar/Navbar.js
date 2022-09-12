@@ -36,11 +36,15 @@ const Navbar = () => {
                                 <Link className="nav-link " aria-current="page" to="/">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
+                                <Link className="nav-link " aria-current="page" to="/">Resturents</Link>
+                            </li>
+                            <li className="nav-item mx-3">
                                 <Link className="nav-link " aria-current="page" to="/">Institution</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">About</Link>
+                                <Link className="nav-link " aria-current="page" to="/">Places</Link>
                             </li>
+                            
                             <li className="nav-item mx-3">
                                 <Link className="nav-link " aria-current="page" to="/">Contact</Link>
                             </li>
