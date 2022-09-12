@@ -47,7 +47,7 @@ const SIgnup = () => {
             </div>
             <div className="RightLoginContainer">
                 <div className='my-4'>
-                    <span className='loginMainHead'> <span style={{ cursor: 'pointer', color: location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color: location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span></span>
+                    <span className='loginMainHead'> <span style={{ cursor: 'pointer', color: location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color: location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span> / <span style={{ cursor: 'pointer' }} onClick={() => { navigate('/') }}>Home</span>  </span>
                 </div>
 
                 <div className='loginForm d-flex flex-column gap-3 '>
@@ -67,7 +67,7 @@ const SIgnup = () => {
                         <button className='loginBtn'>Signup</button>
                     </div>
                     <div>
-                        <span className='fw-bold'>Already have an account? <span style={{textDecoration:'underline', color:'#e41f1f', cursor:'pointer'}} onClick={login}>Login</span></span>
+                        <span className='fw-bold'>Already have an account? <span style={{ textDecoration: 'underline', color: '#e41f1f', cursor: 'pointer' }} onClick={login}>Login</span></span>
                     </div>
                 </div>
             </div>

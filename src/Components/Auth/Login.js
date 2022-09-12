@@ -48,7 +48,7 @@ const Login = () => {
                 </div>
                 <div className="RightLoginContainer">
                     <div className='my-4'>
-                        <span className='loginMainHead'> <span style={{ cursor: 'pointer', color:location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color:location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span></span>
+                        <span className='loginMainHead'> <span style={{ cursor: 'pointer', color:location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color:location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span> / <span style={{ cursor: 'pointer', color:location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={()=>{navigate('/')}}>Home</span>  </span>
                     </div>
 
                     <div className='loginForm d-flex flex-column gap-3 '>
