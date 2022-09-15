@@ -27,7 +27,7 @@ const Footer = () => {
                         </div>
                         <div className="col">
                             <span className="heading">Services</span>
-                            <span className="items" >Hotels</span>
+                            <span className="items" onClick={()=>{navigate('/Hotels')}} >Hotels</span>
                             <span className="items" >Resturents</span>
                             <span className="items" >Institutions</span>
                             <span className="items" >Places</span>
@@ -46,12 +46,12 @@ const Footer = () => {
                         <div className="spanheading">
                             <span>It&apos;s safe. It&apos;s easy.</span>
                             <span>It&apos;s <span style={{color:'#bfbfbf'}}>XploreJhelum</span></span>
-                        <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'#0d0d2b' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>
+                        <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>
                         </div>
                         <div className="icons">
-                            {/* <i className="fa fa-facebook-square" aria-hidden="true"></i>
-                            <i className="fa fa-facebook-official" aria-hidden="true"></i>
-                            <i className="fa fa-instagram" aria-hidden="true"></i> */}
+                            <i className="fa fa-facebook-square" aria-hidden="true"></i>
+                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <i className="fa fa-instagram" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>

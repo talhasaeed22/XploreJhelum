@@ -3,9 +3,12 @@ import './Styles/Home.css'
 import homeimg from '../Images/Home.png'
 import hotel from '../Images/bg.jpg'
 import HomeHotelBox from './Hotels/HomeHotelBox'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import About from './About'
 
 const Home = () => {
+    let navigate = useNavigate();
+
     return (
         <>
             <div className="homeContainer" style={{ marginBottom: '2.5rem', backgroundImage: `url(${homeimg})` }}>
@@ -29,7 +32,7 @@ const Home = () => {
                             <img src={hotel} alt="Fire1" className='img-fluid' />
                             <span className="servicesSpan">Finest Hotels</span>
                             <span>View Finest Quality of Hotels, thier price, spacing, rooms, staff and much more</span>
-                            <button className="servicesButton">View More</button>
+                            <button className="servicesButton" onClick={()=>{navigate('/Hotels')}}>View More</button>
                         </div>
                     </div>
                     <div className="col-md-4 col-sm-12 px-md-5 px-3">
@@ -59,7 +62,7 @@ const Home = () => {
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
                     <h3 className="primaryHeading">Hotels</h3>
-                    <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/">View All</Link>
+                    <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Hotels">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
                 <div className="container my-5">
@@ -103,6 +106,8 @@ const Home = () => {
                 </div>
                 <hr style={{color:'#e32213'}} />
             </div>
+
+            <About/>
         </>
     )
 }

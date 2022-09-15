@@ -7,7 +7,19 @@
 }
 .navBtn:hover{
     background-color: white;
-    color: rgb(191 28 28);
+    color: black;
+}
+.whiteButton{
+    padding: 7px 23px;
+    border-radius: 9px;
+    border: none;background-color: #e32213;
+    color: white;
+}
+.whiteButton:hover{
+    background-color: black;
+    color: white;
+    
+
 }
 .navbar-nav li a{
     font-weight: 600;
@@ -15,6 +27,7 @@
     color: white;
     
 }
+
 .nav-link{
     color: white;
 }

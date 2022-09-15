@@ -9,6 +9,7 @@ import SIgnup from './Components/Auth/SIgnup';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
+import Hotels from './Components/Hotels/Hotels';
 const App = () => {
   return (
     <>
@@ -19,6 +20,8 @@ const App = () => {
 
         <Routes>
           <Route exact path="/" element={<Home />}>
+          </Route>
+          <Route exact path="/Hotels" element={<Hotels />}>
           </Route>
           <Route exact path="/Login" element={<Login />}>
           </Route>

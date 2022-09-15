@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../Images/whitelogo.png'
 import { useLocation, Link, useNavigate } from 'react-router-dom'
+import Coloredlogo from '../../Images/logo.png'
 
 import './Navbar.css'
 const Navbar = () => {
@@ -21,8 +22,8 @@ const Navbar = () => {
                 <div className="container">
                     
                     <div className='d-flex align-items-center'>
-                        <img src={logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> 
-                        <Link to='/' className='fs-4 fw-bold text-light' style={{textDecoration:'none'}}>plore Jhelum</Link>
+                        <img src={location.pathname === '/' ? logo : Coloredlogo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> 
+                        <Link to='/' className={`fs-4 fw-bold text-${location.pathname === '/' ? 'light' :'dark'}`} style={{textDecoration:'none'}}>plore Jhelum</Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -30,30 +31,30 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link ${location.pathname === '/' && 'active'} `} aria-current="page" to="/">Home</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} ${location.pathname === '/' && 'active'} `} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">Hotels</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{borderBottom:location.pathname === '/Hotels' && '2px solid black'}} aria-current="page" to="/Hotels">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">Resturents</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} `} aria-current="page" to="/">Resturents</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">Institution</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} `} aria-current="page" to="/">Institution</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">Places</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} `} aria-current="page" to="/">Places</Link>
                             </li>
                             
                             <li className="nav-item mx-3">
-                                <Link className="nav-link " aria-current="page" to="/">Contact</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} `} aria-current="page" to="/">Contact</Link>
                             </li>
                             
 
                         </ul>
                         <form className="d-flex gap-3" role="search">
-                            <button onClick={signup} className="navBtn" type="submit">Signup</button>
-                            <button onClick={login} className="navBtn" type="submit">Login</button>
+                            <button onClick={signup} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Signup</button>
+                            <button onClick={login} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Login</button>
                         </form>
                     </div>
                 </div>
