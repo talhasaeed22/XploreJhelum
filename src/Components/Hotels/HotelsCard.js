@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const HotelsCard = (props) => {
+    const nevigate = useNavigate();
+    const routeChange = () => {
+        nevigate('/HotelDetails', { state: { name: 'Hotel Name', image:props.image } })
+    }
     return (
         <>
             <div className='hotelCard'>
@@ -17,7 +22,7 @@ const HotelsCard = (props) => {
                         <img src={props.feature3} alt="pool" className="img-fluid" width={30} />
                     </div>
                     <div className='d-flex justify-content-between my-2' style={{ alignItems: 'flex-end' }}>
-                        <button className="readmore ">Read More</button>
+                        <button className="readmore " onClick={routeChange}>Read More</button>
                         <div className='d-flex flex-column' style={{ alignItems: 'flex-end' }}>
                             <span style={{ fontSize: '14px' }}>Price from</span>
                             <span style={{ color: 'rgb(191 28 28)', fontWeight: "600", fontSize: '19px' }}>PKR 49,114 </span>

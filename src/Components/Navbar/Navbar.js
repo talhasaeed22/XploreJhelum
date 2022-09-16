@@ -8,11 +8,13 @@ const Navbar = () => {
     let location = useLocation();
     let navigate = useNavigate();
 
-    const signup = () => {
+    const signup = (e) => {
+        e.preventDefault();
         let path = `/Signup`;
         navigate(path);
     }
-    const login = () => {
+    const login = (e) => {
+        e.preventDefault();
         let path = `/Login`;
         navigate(path);
     }
@@ -34,7 +36,7 @@ const Navbar = () => {
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} ${location.pathname === '/' && 'active'} `} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{borderBottom:location.pathname === '/Hotels' && '2px solid black'}} aria-current="page" to="/Hotels">Hotels</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{borderBottom:(location.pathname === '/Hotels' || location.pathname === '/HotelDetails') && '2px solid black'}} aria-current="page" to="/Hotels">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' :'dark'} `} aria-current="page" to="/">Resturents</Link>
@@ -56,6 +58,10 @@ const Navbar = () => {
                             <button onClick={signup} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Signup</button>
                             <button onClick={login} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Login</button>
                         </form>
+                        {/* <div className='d-flex gap-2 align-items-center'>
+                            <img src={logo} alt="logo" className='img-fluid' width={30} />
+                            <span className={` fs-5 ${location.pathname === '/' ? 'text-light' : 'text-dark'}`}>Hello, <span className='fw-bold'>Talha</span></span>
+                        </div> */}
                     </div>
                 </div>
             </nav>

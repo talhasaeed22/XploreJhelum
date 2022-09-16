@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Hotels from './Components/Hotels/Hotels';
+import HotelDetails from './Components/Hotels/HotelDetails';
 const App = () => {
   return (
     <>
@@ -26,6 +27,8 @@ const App = () => {
           <Route exact path="/Login" element={<Login />}>
           </Route>
           <Route exact path="/Signup" element={<SIgnup />}>
+          </Route>
+          <Route exact path="/HotelDetails" element={<HotelDetails />}>
           </Route>
 
         </Routes>
