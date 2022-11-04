@@ -28,7 +28,7 @@ const Footer = () => {
                         <div className="col">
                             <span className="heading">Services</span>
                             <span className="items" onClick={()=>{navigate('/Hotels')}} >Hotels</span>
-                            <span className="items" >Resturents</span>
+                            <span className="items" onClick={()=>{navigate('/Restaurants')}} >Resturents</span>
                             <span className="items" >Institutions</span>
                             <span className="items" >Places</span>
 

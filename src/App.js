@@ -11,6 +11,8 @@ import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Hotels from './Components/Hotels/Hotels';
 import HotelDetails from './Components/Hotels/HotelDetails';
+import Restaurants from './Components/Restaurant/Restaurants';
+import RestaurantDetails from './Components/Restaurant/RestaurantDetails';
 const App = () => {
   return (
     <>
@@ -24,9 +26,13 @@ const App = () => {
           </Route>
           <Route exact path="/Hotels" element={<Hotels />}>
           </Route>
+          <Route exact path="/Restaurants" element={<Restaurants />}>
+          </Route>
           <Route exact path="/Login" element={<Login />}>
           </Route>
           <Route exact path="/Signup" element={<SIgnup />}>
+          </Route>
+          <Route exact path="/RestaurantDetails" element={<RestaurantDetails />}>
           </Route>
           <Route exact path="/HotelDetails" element={<HotelDetails />}>
           </Route>
