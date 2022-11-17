@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../Images/logo.png'
 import './Auth.css'
@@ -6,6 +6,33 @@ import bg from '../../Images/blurbg.jpg'
 import lowerbg from '../../Images/bg.jpg'
 
 const SIgnup = () => {
+    let nevigate = useNavigate();
+    const [signupCred, setSignupCred] = useState({name:"", email:"", password:""});
+    const url = 'http://localhost:5000';
+    const handleSignup = async (e)=>{
+        e.preventDefault();
+        const response = await fetch(`${url}/api/auth/signup`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({name:signupCred.name,email:signupCred.email, password:signupCred.password, age:signupCred.age, gender:signupCred.gender})
+        });
+        const json = await response.json();
+        console.log(json);
+        if(json.success){
+            //SAVE THE AUTH TOKEN AND REDIRECT
+            localStorage.setItem('token', json.token);
+            alert("Signed Up");
+            nevigate('/')
+        }else{
+            alert("Invalid Credintials");
+        }
+    }
+    const onChange = (e) => {
+        setSignupCred({ ...signupCred, [e.target.name]: e.target.value })
+    }
+
     let location = useLocation();
     let navigate = useNavigate();
     const signup = () => {
@@ -53,18 +80,18 @@ const SIgnup = () => {
                 <div className='loginForm d-flex flex-column gap-3 '>
                     <div className='d-flex flex-column'>
                         <label htmlFor="name">Name</label>
-                        <input className='loginInp' type="text" name="name" id="name" placeholder='Enter your name' />
+                        <input value={signupCred.name} onChange={onChange} className='loginInp' type="text" name="name" id="name" placeholder='Enter your name' />
                     </div>
                     <div className='d-flex flex-column'>
                         <label htmlFor="email">Email Address</label>
-                        <input className='loginInp' type="email" name="email" id="email" placeholder='abc@example.com' />
+                        <input value={signupCred.email} onChange={onChange} className='loginInp' type="email" name="email" id="email" placeholder='abc@example.com' />
                     </div>
                     <div className='d-flex flex-column'>
                         <label htmlFor="password">Password</label>
-                        <input className='loginInp' type="password" name="password" id="password" placeholder='******' />
+                        <input value={signupCred.password} onChange={onChange} className='loginInp' type="password" name="password" id="password" placeholder='******' />
                     </div>
                     <div className='mx-auto my-4'>
-                        <button className='loginBtn'>Signup</button>
+                        <button onClick={handleSignup} className='loginBtn'>Signup</button>
                     </div>
                     <div>
                         <span className='fw-bold'>Already have an account? <span style={{ textDecoration: 'underline', color: '#e41f1f', cursor: 'pointer' }} onClick={login}>Login</span></span>
