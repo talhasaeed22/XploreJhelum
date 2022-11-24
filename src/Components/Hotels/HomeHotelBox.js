@@ -59,25 +59,24 @@ export default class CustomArrows extends Component {
                         <h3 className="text-center">JHELUM INN BOUTIQUE HOTEL</h3>
                         <img src={inn1} className="d-block w-100 img-fluid" alt="..." />
                         <p className="py-2">Gt Road Jhelum Cantt, Jhelum, Pakistan</p>
+                    </div>
+                    <div className="px-2">
+                        <h3 className="text-center">Tulip Riverside Hotel</h3>
+                        <img src={tulip1} className="d-block w-100 img-fluid" alt="tulip" />
+                        <p className="py-2 px-2 text-center fw-bold">Opposite Masjid Bilal, Model Colony Shandar Chowk, Jhelum, 49600 Jhelum, Pakistan</p>
+                    </div>
+                    <div className="px-2">
+                        <h3 className="text-center">Hotel Khan Plaza</h3>
+                        <img src={khan1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">Opposite Masjid Bilal, Model Colony Shandar Chowk, Jhelum, 49600 Jhelum, Pakistan</p>
 
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Hotel Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias suscipit, corrupti placeat odio qui nobis </p>
-
+                        <h3 className="text-center">JHELUM INN BOUTIQUE HOTEL</h3>
+                        <img src={inn1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">Gt Road Jhelum Cantt, Jhelum, Pakistan</p>
                     </div>
-                    <div className="px-2">
-                        <h3 className="text-center">Hotel Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
-
-                    </div>
-                    <div className="px-2">
-                        <h3 className="text-center">Hotel Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
-                    </div>
+                  
                 </Slider>
             </div>
         );

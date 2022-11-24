@@ -3,7 +3,12 @@ import "slick-carousel/slick/slick-theme.css";
 import hotel from '../../Images/bg.jpg'
 import React, { Component } from "react";
 import Slider from "react-slick";
-
+import kfc1 from '../../Images/Restaurants/kfc1.png'
+import mc1 from '../../Images/Restaurants/mc1.png'
+import asian1 from '../../Images/Restaurants/asian.png'
+import chaye1 from '../../Images/Restaurants/chaye.png'
+import china1 from '../../Images/Restaurants/china.png'
+import monarch1 from '../../Images/Restaurants/monarch.png'
 export default class CustomArrows extends Component {
     render() {
         const settings = {
@@ -20,38 +25,38 @@ export default class CustomArrows extends Component {
             <div>
                 <Slider {...settings}>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
+                        <h3 className="text-center">KFC</h3>
+                        <img src={kfc1} className="d-block w-100 img-fluid" alt="KFC" />
+                        <p className="py-2">Grand Trunk Rd Near Jhelum Bridge, Jhelum 49600 Pakistan</p>
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
+                        <h3 className="text-center">McDonald's</h3>
+                        <img src={mc1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">G.T. Rd Jhelum Toll Plaza, Jhelum Pakistan </p>
 
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
+                        <h3 className="text-center">Chaaye Khana</h3>
+                        <img src={chaye1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">GT Road, Jhelum Cantonment, Jhelum Pakistan</p>
 
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias suscipit, corrupti placeat odio qui nobis </p>
+                        <h3 className="text-center">Monarch Lounge</h3>
+                        <img src={monarch1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">Main GT road near Honda express showroom , Jhelum, Pakistan</p>
 
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
+                        <h3 className="text-center">China citi</h3>
+                        <img src={china1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">Satellite Town, Satellite Town Jhelum, Jhelum, Punjab, Pakistan</p>
 
                     </div>
                     <div className="px-2">
-                        <h3 className="text-center">Restaurant Name</h3>
-                        <img src={hotel} className="d-block w-100 img-fluid" alt="..." />
-                        <p className="py-2">Hotel Description</p>
+                        <h3 className="text-center">Asian Cuisine Family Restaurant</h3>
+                        <img src={asian1} className="d-block w-100 img-fluid" alt="..." />
+                        <p className="py-2">G T Road Rathian Jhelum, Jhelum, Pakistan</p>
                     </div>
                 </Slider>
             </div>

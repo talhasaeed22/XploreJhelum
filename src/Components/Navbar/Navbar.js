@@ -69,7 +69,7 @@ const Navbar = () => {
                                 <button onClick={login} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Login</button>
                                 <button onClick={signup} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Signup</button>
                             </div>
-                        </div> : <label style={{ fontSize: '1.2rem' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
+                        </div> : <label className={location.pathname === '/' ? 'text-light' : 'text-dark'} style={{ fontSize: '1.2rem', fontWeight:'bold' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
                     </div>
                 </div>
             </nav>

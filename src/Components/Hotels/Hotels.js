@@ -47,12 +47,6 @@ const Hotels = () => {
                             <div className="col-md-4 my-3 col-sm-6 col-12">
                                 <HotelsCard image={[inn1, inn2, inn3, inn4, inn5, inn6]} name="INN BOUTIQUE HOTEL" feature1={pool} feature3={drink} feature2={breakfast} />
                             </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[hotel]} feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[hotel]} feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
                         </div>
                     </div>
                 </div>
