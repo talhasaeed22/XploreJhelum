@@ -1,6 +1,6 @@
 import React from 'react'
 import './Styles/Home.css'
-import homeimg from '../Images/Home.png'
+import homeimg from '../Images/download.png'
 import tulip1 from '../Images/Hotels/Tulip1.png'
 import kfc1 from '../Images/Restaurants/kfc1.png'
 
@@ -66,7 +66,7 @@ const Home = () => {
 
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
-                    <h3 className="primaryHeading">Hotels</h3>
+                    <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Hotels</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Hotels">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Hotels are categorized depending upon location, number of rooms, types of rooms and other available facilities. One of the important facilities in hotels includes good reception and information counter. Today, modern western hotels are found in all big cities and at important tourist locations. otel rooms have everything you need for a pleasant stay: large comfortable beds covered with special bedspreads that get made by themselves, and bathrooms that are clean and shiny. The pictures on the wall are always properly aligned, and everything always functions perfectly.</p>
@@ -78,7 +78,7 @@ const Home = () => {
 
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
-                    <h3 className="primaryHeading">Restaurents</h3>
+                    <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Restaurents</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Restaurants">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
@@ -90,7 +90,7 @@ const Home = () => {
 
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
-                    <h3 className="primaryHeading">Institutions</h3>
+                    <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Institutions</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
@@ -102,7 +102,7 @@ const Home = () => {
 
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
-                    <h3 className="primaryHeading">Trip Places</h3>
+                    <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Trip Places</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>

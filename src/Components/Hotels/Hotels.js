@@ -20,7 +20,27 @@ import inn3 from '../../Images/Hotels/inn3.png'
 import inn4 from '../../Images/Hotels/inn4.png'
 import inn5 from '../../Images/Hotels/inn5.png'
 import inn6 from '../../Images/Hotels/inn6.png'
-
+import mirpur1 from '../../Images/Hotels/mirpur.png'
+import mirpur2 from '../../Images/Hotels/mirpur1.png'
+import mirpur3 from '../../Images/Hotels/mirpur2.png'
+import mirpur4 from '../../Images/Hotels/mirpur3.png'
+import mirpur5 from '../../Images/Hotels/mirpur4.png'
+import lotus1 from '../../Images/Hotels/lotus1.png'
+import lotus2 from '../../Images/Hotels/lotus2.png'
+import lotus3 from '../../Images/Hotels/lotus3.png'
+import lotus4 from '../../Images/Hotels/lotus4.png'
+import lotus5 from '../../Images/Hotels/lotus5.png'
+import usman1 from '../../Images/Hotels/usman1.png'
+import usman2 from '../../Images/Hotels/usman2.png'
+import usman3 from '../../Images/Hotels/usman3.png'
+import usman4 from '../../Images/Hotels/usman4.png'
+import usman5 from '../../Images/Hotels/usman5.png'
+import usman6 from '../../Images/Hotels/usman6.png'
+import undrah from '../../Images/Hotels/undrah.png'
+import undrah1 from '../../Images/Hotels/undrah1.png'
+import undrah2 from '../../Images/Hotels/undrah2.png'
+import undrah3 from '../../Images/Hotels/undrah3.png'
+import undrah4 from '../../Images/Hotels/undrah4.png'
 
 import HotelsCard from './HotelsCard'
 import About from '../About'
@@ -46,6 +66,18 @@ const Hotels = () => {
                             </div>
                             <div className="col-md-4 my-3 col-sm-6 col-12">
                                 <HotelsCard image={[inn1, inn2, inn3, inn4, inn5, inn6]} name="INN BOUTIQUE HOTEL" feature1={pool} feature3={drink} feature2={breakfast} />
+                            </div>
+                            <div className="col-md-4 my-3 col-sm-6 col-12">
+                                <HotelsCard image={[mirpur1, mirpur2, mirpur3, mirpur4, mirpur5]} name="Mirpur AJK Serviced Villa" feature1={pool} feature3={drink} feature2={breakfast} />
+                            </div>
+                            <div className="col-md-4 my-3 col-sm-6 col-12">
+                                <HotelsCard image={[lotus1, lotus2, lotus3, lotus4, lotus5]} name="Lotus Inn" feature1={pool} feature3={drink} feature2={breakfast} />
+                            </div>
+                            <div className="col-md-4 my-3 col-sm-6 col-12">
+                                <HotelsCard image={[usman1, usman2, usman3, usman4, usman5, usman6]} name="Usman Lodges Ajk" feature1={pool} feature3={drink} feature2={breakfast} />
+                            </div>
+                            <div className="col-md-4 my-3 col-sm-6 col-12">
+                                <HotelsCard image={[undrah, undrah1, undrah2, undrah3, undrah4]} name="Undrah Inn Hotel" feature1={pool} feature3={drink} feature2={breakfast} />
                             </div>
                         </div>
                     </div>

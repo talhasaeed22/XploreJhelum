@@ -25,8 +25,8 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className={`navbar navbar-expand-lg ${(location.pathname === '/Login' || location.pathname === '/Signup') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)' }}>
-                <div className="container">
+            <nav  className={`navbar navbar-expand-lg ${(location.pathname === '/Login' || location.pathname === '/Signup') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)', position:'sticky', top:'0px', zIndex:'1000'}}>
+                <div className="container" >
 
                     <div className='d-flex align-items-center'>
                         <img src={location.pathname === '/' ? logo : Coloredlogo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />

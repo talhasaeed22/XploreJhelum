@@ -1,6 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import hotel from '../../Images/bg.jpg'
 import React, { Component } from "react";
 import Slider from "react-slick";
 import kfc1 from '../../Images/Restaurants/kfc1.png'
@@ -9,6 +8,7 @@ import asian1 from '../../Images/Restaurants/asian.png'
 import chaye1 from '../../Images/Restaurants/chaye.png'
 import china1 from '../../Images/Restaurants/china.png'
 import monarch1 from '../../Images/Restaurants/monarch.png'
+
 export default class CustomArrows extends Component {
     render() {
         const settings = {
