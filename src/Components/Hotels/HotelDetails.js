@@ -12,8 +12,8 @@ const HotelDetails = (props) => {
     }
     return (
         <>
-            <div className="container">
-                <img src={location.state.image[0]} alt="hotel" className="img-fluid my-3 w-100" />
+            <div className="container d-flex justify-content-center">
+                <img src={location.state.image[0]} alt="hotel" className="img-fluid my-3 w-75 " />
             </div>
             <div className="container">
                 {/* <h1 className='primaryHeading'>{location.state.name}</h1> */}
