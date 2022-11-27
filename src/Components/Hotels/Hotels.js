@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hotels.css'
-import hotel from '../../Images/bg.jpg'
 import pool from '../../Images/Hotel Features/pool.png'
 import drink from '../../Images/Hotel Features/drinks.png'
 import breakfast from '../../Images/Hotel Features/Breakfast.png'
