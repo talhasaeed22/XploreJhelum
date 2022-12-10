@@ -11,6 +11,7 @@ DBconnect();
 app.use(express.json())
 app.use(cors())
 app.use('/api/auth', require('./routes/Auth'));
+app.use('/api/hotel', require('./routes/Hotels'));
 
 app.get('/', (req, res)=>{
   res.send("Welcome to iNotebook API");

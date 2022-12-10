@@ -3,15 +3,14 @@ import './Styles/Home.css'
 import homeimg from '../Images/download.png'
 import tulip1 from '../Images/Hotels/Tulip1.png'
 import kfc1 from '../Images/Restaurants/kfc1.png'
-
 import hotel from '../Images/bg.jpg'
 import HomeHotelBox from './Hotels/HomeHotelBox'
 import HomeRestaurantBox from './Restaurant/HomeRestaurantBox'
-
 import { Link, useNavigate } from 'react-router-dom'
 import About from './About'
 
 const Home = () => {
+
     let navigate = useNavigate();
 
     return (
