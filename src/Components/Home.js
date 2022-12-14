@@ -8,7 +8,7 @@ import HomeHotelBox from './Hotels/HomeHotelBox'
 import HomeRestaurantBox from './Restaurant/HomeRestaurantBox'
 import { Link, useNavigate } from 'react-router-dom'
 import About from './About'
-
+import HomePlacesBox from '../Components/Places/HomePlacesBox'
 const Home = () => {
 
     let navigate = useNavigate();
@@ -102,11 +102,11 @@ const Home = () => {
             <div className="container pt-5">
                 <div className='d-flex align-items-center justify-content-between gap-3 pt-4'>
                     <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Trip Places</h3>
-                    <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/">View All</Link>
+                    <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Places">View All</Link>
                 </div>
                 <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
                 <div className="container my-5">
-                    <HomeHotelBox/>
+                    <HomePlacesBox/>
                 </div>
                 <hr style={{color:'#e32213'}} />
             </div>

@@ -13,6 +13,8 @@ import Hotels from './Components/Hotels/Hotels';
 import HotelDetails from './Components/Hotels/HotelDetails';
 import Restaurants from './Components/Restaurant/Restaurants';
 import RestaurantDetails from './Components/Restaurant/RestaurantDetails';
+import PlacesDetail from './Components/Places/PlacesDetail';
+import Places from './Components/Places/Places';
 const App = () => {
   return (
     <>
@@ -36,6 +38,11 @@ const App = () => {
           </Route>
           <Route exact path="/HotelDetails" element={<HotelDetails />}>
           </Route>
+          <Route exact path="/PlacesDetails" element={<PlacesDetail />}>
+          </Route>
+          <Route exact path="/Places" element={<Places />}>
+          </Route>
+          
 
         </Routes>
         <Footer/>
