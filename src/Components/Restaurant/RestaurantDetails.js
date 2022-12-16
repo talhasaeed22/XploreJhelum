@@ -37,12 +37,12 @@ const RestaurantDetails = (props) => {
                     <div className="col-md-4">
                         <img src={location.state.image[3]} alt="hotel" className="img-fluid" />
                     </div>
-                    <div className="col-md-4">
+                    {location.state.image[4] && <div className="col-md-4">
                         <img src={location.state.image[4]} alt="hotel" className="img-fluid" />
-                    </div>
-                    <div className="col-md-4">
+                    </div>}
+                   {location.state.image[5] &&  <div className="col-md-4">
                         <img src={location.state.image[5]} alt="hotel" className="img-fluid" />
-                    </div>
+                    </div>}
                 </div>
             </div>
 
