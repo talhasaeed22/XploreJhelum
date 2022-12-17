@@ -9,16 +9,18 @@ import { getDocs, collection } from 'firebase/firestore'
 
 import HotelsCard from './HotelsCard'
 import About from '../About'
+import LoadingSpinner from '../Spinner/LoadingSpinner'
 
 const Hotels = () => {
     const [posts, setPosts] = useState([])
-
+const [loading, setLoading] = useState(false)
     useEffect(() => {
         getImages();
     }, [])
 
     const getImages = async () => {
         try {
+            setLoading(true)
             const postItem = [];
             const querySnapshot = await getDocs(collection(db, "Hotels"));
             querySnapshot.forEach((doc) => {
@@ -33,6 +35,7 @@ const Hotels = () => {
             });
             console.log(postItem)
             setPosts(postItem);
+            setLoading(false)
         } catch (excep) {
             console.log(excep);
         }
@@ -51,7 +54,7 @@ const Hotels = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero earum suscipit ipsam ad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti placeat esse inventore dignissimos consequatur! Libero alias temporibus est tempore impedit perspiciatis voluptatum id pariatur, vel odit nobis dolor corrupti sapiente.</p>
                     <div className="container">
                         <div className="row ">
-                            {posts.map((item) => {
+                            {loading ? <div className='d-flex align-items-center my-5 justify-content-center'><LoadingSpinner/></div> : posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
                                     <HotelsCard key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
