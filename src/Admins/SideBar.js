@@ -1,8 +1,9 @@
 import React from 'react'
 import './Sidebar.css'
 import logo from '../Images/Adminlogo.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 const SideBar = () => {
+    const location = useLocation();
     return (
         <nav className='sidenav '>
             <ul>
@@ -17,13 +18,13 @@ const SideBar = () => {
 
             <ul className='lower'>
                 <li>
-                    <Link to="/" className='Link sideactive'>
+                    <Link to="/Admin" className={`Link ${location.pathname === '/Admin' && 'sideactive'}`}>
                         <i className="fa sidefa fa-home" aria-hidden="true"></i>
                         <span className='side-nav-item'>Home</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className='Link'>
+                    <Link to="/Profile" className={`Link ${location.pathname === '/Profile' && 'sideactive'}`}>
                         <i className="fa sidefa fa-user" aria-hidden="true"></i>
                         <span className='side-nav-item'>Profile</span>
                     </Link>
