@@ -1,0 +1,217 @@
+/* SIde NavBar Style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu&display=swap');
+/* .sidenav {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+
+} */
+
+.sidenav ul li {
+    list-style: none;
+}
+
+.sidenav ul{
+    padding: 0;
+}
+
+.sidenav {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    background: #00034d;
+    width: 90px;
+    width: 260px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.sidelogo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 23px 0 0 23px;
+    text-decoration: none;
+}
+
+.sidelogo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* margin-right: 12px; */
+}
+
+.sidelogo span {
+    font-weight: 800;
+    padding-left: 16x;
+    font-size: 18px;
+    text-transform: uppercase;
+    /* color: black; */
+
+}
+
+.Link {
+    position: relative;
+    color: white;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+    text-decoration: none;
+    /* padding-left: 0px; */
+}
+
+.sidefa {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.side-nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.Link:hover {
+    background-color: #63aacb;
+    color: white;
+}
+
+.sidenav:hover {
+    width: 260px;
+    transition: all 0.5s ease;
+}
+
+.side-logout {
+    position: absolute;
+
+    bottom: 0;
+}
+
+.lower {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.sideactive {
+    background-color: #1ba8e8;
+    color: white;
+}
+
+/* //ADmin Pages STyles */
+.AdminTitle{
+    position: absolute;
+    width: 266px;
+    height: 25px;
+    left: 282.65px;
+    top: 19.15px;
+    
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.8826px;
+    line-height: 25px;
+    
+    /* Dark/01 */
+    
+    color: #33343D;
+}
+
+.AdminGreating{
+    position: absolute;
+    width: 214px;
+    height: 15px;
+    left: 282.65px;
+    top: 51.97px;
+    
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.7648px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    
+    /* Dark/02 */
+    
+    color: #807D9B;
+}
+.profileImg{
+    padding: 20px 0;
+}
+.profileImg img{
+    
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+@media(max-width:620px){
+    .sidenav{
+        width: 90px;
+    }
+    .sidelogo img {
+      
+        margin-right: 12px;
+    }
+    
+}
+
+.AdminPrimaryHeading{
+
+
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 21.8826px;
+/* line-height: 25px; */
+text-decoration-line: underline;
+text-align: center;
+
+/* Blue/01 */
+
+color: #01058A;
+}
+
+.AdminHeader{
+    background-color: #FAFAFD;
+    border-radius: 24px;
+    box-shadow: 0px 5px 7px 0px rgb(114 114 114 / 25%);
+}
+
+.AdminHomeBox{
+    background-color: #FAFAFD;
+    border-radius: 24px;
+    box-shadow: 0px 5px 7px 0px rgb(114 114 114 / 25%);
+    padding: 24px;
+    text-align: left;
+}

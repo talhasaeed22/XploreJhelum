@@ -15,6 +15,7 @@ import Restaurants from './Components/Restaurant/Restaurants';
 import RestaurantDetails from './Components/Restaurant/RestaurantDetails';
 import PlacesDetail from './Components/Places/PlacesDetail';
 import Places from './Components/Places/Places';
+import Tulip from './Admins/Tulip';
 const App = () => {
   return (
     <>
@@ -42,10 +43,14 @@ const App = () => {
           </Route>
           <Route exact path="/Places" element={<Places />}>
           </Route>
+
+          {/* //Admin Routes */}
+          <Route exact path="/Tulip" element={<Tulip />}>
+          </Route>
           
 
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
 
     </>

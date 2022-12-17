@@ -15,7 +15,7 @@ const Footer = () => {
     }
     return (
         <>
-            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname ==='/Signup') && 'd-none'} `}>
+            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname ==='/Signup' || location.pathname === '/Tulip') && 'd-none'} `}>
                 <div className="container innerContainer">
                     <div className='left'>
                         <div className="col">
