@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useLocation, useNavigate, } from 'react-router-dom';
 import About from '../About';
 
@@ -39,6 +39,27 @@ const HotelDetails = (props) => {
     const close = () => {
         closeModal.current.click();
     }
+
+    useEffect(() => {
+        getRooms();
+        // eslint-disable-next-line
+    }, [])
+
+    const [rooms, setRooms] = useState([])
+
+    const getRooms = async ()=>{
+        const response = await fetch(`${url}/api/hotel/getrooms`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ hotel: location.state.name, available:'yes' })
+        });
+        const json = await response.json();
+        setRooms(json.rooms)
+        
+    }
+    
     return (
         <>
             <div className="container d-flex justify-content-center">
@@ -138,7 +159,12 @@ const HotelDetails = (props) => {
                                 </div>
                                 <div className='d-flex flex-column my-3'>
                                     <label htmlFor="rooms">Rooms</label>
-                                    <input value={details.rooms} onChange={onChange} type="number" name="rooms" id="rooms" placeholder='Enter no of rooms to book' />
+                                    {/* // eslint-disable-next-line */}
+                                    <select value={details.rooms} onChange={onChange} name="rooms" id="rooms">
+                                        {rooms.map((room)=>
+                                            <option value={room.number}>{room.number}</option>
+                                        )}
+                                    </select>
                                 </div>
                             </div>
                         </div>
