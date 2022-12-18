@@ -3,12 +3,20 @@ import './Sidebar.css'
 import logo from '../Images/Adminlogo.png'
 import { Link, useLocation } from 'react-router-dom'
 const SideBar = () => {
-    const location = useLocation();
+    let location = useLocation();
+    const signout = () => {
+        localStorage.setItem('hotel', "");
+        localStorage.setItem('token', '');
+        localStorage.setItem('name', '');
+        localStorage.setItem('email', '');
+        alert('Logged Out Sussessfuly')
+        // navigate('/login')
+    }
     return (
         <nav className='sidenav '>
             <ul>
                 <li>
-                    <Link to="/" className='sidelogo'>
+                    <Link to="/Admin" className='sidelogo'>
                         <img src={logo} alt="Logo" />
                         <span className='side-nav-item text-white'>plore Jhelum</span>
                     </Link>
@@ -31,7 +39,7 @@ const SideBar = () => {
                 </li>
 
                 <li>
-                    <Link to="/" className='Link'>
+                    <Link to="/Request" className={`Link ${location.pathname === '/Request' && 'sideactive'}`}>
                         <i className="fa sidefa fa-th-list" aria-hidden="true"></i>
                         <span className='side-nav-item'>Requests</span>
                     </Link>
@@ -44,7 +52,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className='side-logout Link'>
+                    <Link to='/login' onClick={signout} className='side-logout Link'>
                         <i className="fa sidefa fa-sign-out" aria-hidden="true"></i>
                         <span className='side-nav-item'>Logout</span>
                     </Link>

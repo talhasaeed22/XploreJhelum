@@ -12,7 +12,7 @@ const Tulip = () => {
                 <div className='d-flex flex-column w-100'>
                     <div className='d-flex justify-content-between w-100 px-5 align-items-center'>
                         <div className='d-flex flex-column'>
-                            <span className='AdminTitle'>Hello, Talha Saeed</span>
+                            <span className='AdminTitle'>Hello, {localStorage.getItem('name')}</span>
                             <span className='AdminGreating'>Welcome back, nice to see you again</span>
                         </div>
                         <div className='profileImg'>
@@ -23,7 +23,7 @@ const Tulip = () => {
                     <div className='d-flex flex-colmn w-100 px-5 align-items-center justify-content-center'>
                         <div className='w-50  AdminHeader pt-5'>
                             <div className='text-center d-flex flex-column'>
-                                <span className='AdminPrimaryHeading '>Tulip River Side Hotel</span>
+                                <span className='AdminPrimaryHeading '>{localStorage.getItem('hotel')}</span>
                                 <span className='AdminPrimaryHeading ' style={{ color: 'MenuText', textDecoration: 'none' }}>Admin Page</span>
                             </div>
                             <div className='px-3 text-center py-4 '>

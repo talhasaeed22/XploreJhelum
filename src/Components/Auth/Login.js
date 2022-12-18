@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import { useLocation,  useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../Images/logo.png'
 import './Auth.css'
 import bg from '../../Images/blurbg.jpg'
@@ -11,33 +11,52 @@ const Login = () => {
 
 
     const url = 'http://localhost:5000';
-    const [loginCred, setLoginCred] = useState({email:'', password:''})
+    const [loginCred, setLoginCred] = useState({ email: '', password: '' })
 
-    const handleLogin = async (e)=>{
-        if(loginCred.password.length < 5 || loginCred.email.length === 0){
+    const handleLogin = async (e) => {
+        if (loginCred.password.length < 5 || loginCred.email.length === 0) {
             alert("please Enter Valid Email and Password")
             e.preventDefault();
-        }else{
+        } else {
 
-            e.preventDefault();
-            const response = await fetch(`${url}/api/auth/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({email:loginCred.email, password:loginCred.password})
-            });
-            const json = await response.json();
-            
-            if(json.success){
-                //SAVE THE AUTH TOKEN AND REDIRECT
+            if (loginCred.email === 'adminTulip@gmail.com' && loginCred.password === 'Admin123') {
+                const response = await fetch(`${url}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: 'adminTulip@gmail.com', password: 'Admin123' })
+                });
+                const json = await response.json();
+                console.log(json)
+                localStorage.setItem('hotel', "Tulip Riverside Hotel");
                 localStorage.setItem('token', json.token);
                 localStorage.setItem('name', json.name);
-                alert('Login Success');
-                navigate('/')
-            }else{
-                alert("Invalid Credintials");
+                localStorage.setItem('email', json.email);
+                alert('Admin Login Success');
+                navigate('/Admin')
+            } else {
+                e.preventDefault();
+                const response = await fetch(`${url}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: loginCred.email, password: loginCred.password })
+                });
+                const json = await response.json();
+
+                if (json.success) {
+                    //SAVE THE AUTH TOKEN AND REDIRECT
+                    localStorage.setItem('token', json.token);
+                    localStorage.setItem('name', json.name);
+                    alert('Login Success');
+                    navigate('/')
+                } else {
+                    alert("Invalid Credintials");
+                }
             }
+
         }
     }
     const onChange = (e) => {
@@ -85,7 +104,7 @@ const Login = () => {
                 </div>
                 <div className="RightLoginContainer">
                     <div className='my-4'>
-                        <span className='loginMainHead'> <span style={{ cursor: 'pointer', color:location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color:location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span> / <span style={{ cursor: 'pointer', color:location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={()=>{navigate('/')}}>Home</span>  </span>
+                        <span className='loginMainHead'> <span style={{ cursor: 'pointer', color: location.pathname === '/Login' ? '#e41f1f' : 'black' }} onClick={login}>Login</span> / <span style={{ cursor: 'pointer', color: location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={signup}>Signup</span> / <span style={{ cursor: 'pointer', color: location.pathname === '/Signup' ? '#e41f1f' : 'black' }} onClick={() => { navigate('/') }}>Home</span>  </span>
                     </div>
 
                     <div className='loginForm d-flex flex-column gap-3 '>
@@ -101,7 +120,7 @@ const Login = () => {
                             <button onClick={handleLogin} className='loginBtn'>Login</button>
                         </div>
                         <div>
-                            <span className='fw-bold'>Don't have an account? <span style={{textDecoration:'underline', color:'#e41f1f', cursor:'pointer'}} onClick={signup}>Signup</span></span>
+                            <span className='fw-bold'>Don't have an account? <span style={{ textDecoration: 'underline', color: '#e41f1f', cursor: 'pointer' }} onClick={signup}>Signup</span></span>
                         </div>
                         {/* <div>
                             <span className=' text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem perspiciatis obcaecati illum. Quos unde, itaque possimus.</span>

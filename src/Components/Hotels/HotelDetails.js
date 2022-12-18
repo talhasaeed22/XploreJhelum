@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useLocation, useNavigate, } from 'react-router-dom';
 import About from '../About';
 
@@ -7,8 +7,37 @@ const HotelDetails = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
     const ref = useRef();
+    const closeModal = useRef();
     const openModal = () => {
         ref.current.click();
+    }
+
+    const url = 'http://localhost:5000'
+    const [details, setDetails] = useState({ name: "", email: '', address: "", days: "", contact: '', Emergencycontact: '', rooms: '' })
+
+    const onChange = (e) => {
+        setDetails({ ...details, [e.target.name]: e.target.value })
+    }
+
+    const handleBooking = async (e) => {
+        e.preventDefault();
+        const response = await fetch(`${url}/api/hotel/booking`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name: details.name, email: details.email, address: details.address, days: details.days, contact: details.contact, emergencyContact: details.Emergencycontact, roomNumber: details.rooms, hotel: location.state.name, status: 'Pending' })
+        });
+        const json = await response.json();
+
+        alert('You have made the booking. Wait for confirmation')
+        close();
+        console.log(json)
+
+
+    }
+    const close = () => {
+        closeModal.current.click();
     }
     return (
         <>
@@ -37,7 +66,7 @@ const HotelDetails = (props) => {
                     {location.state.image[4] && <div className="col-md-4">
                         <img src={location.state.image[4]} alt="hotel" className="img-fluid" />
                     </div>}
-                   {location.state.image[5] &&  <div className="col-md-4">
+                    {location.state.image[5] && <div className="col-md-4">
                         <img src={location.state.image[5]} alt="hotel" className="img-fluid" />
                     </div>}
                 </div>
@@ -81,41 +110,41 @@ const HotelDetails = (props) => {
                                 <div className='d-flex justify-content-between my-3'>
                                     <div className='d-flex flex-column'>
                                         <label htmlFor="name">Name</label>
-                                        <input type="text" name="name" id="name" placeholder='Enter your name' />
+                                        <input value={details.name} onChange={onChange} type="text" name="name" id="name" placeholder='Enter your name' />
                                     </div>
                                     <div className="d-flex flex-column">
                                         <label htmlFor="email">Email</label>
-                                        <input type="email" name="email" id="email" placeholder='Enter your email' />
+                                        <input value={details.email} onChange={onChange} type="email" name="email" id="email" placeholder='Enter your email' />
                                     </div>
                                 </div>
 
                                 <div className='d-flex flex-column my-3'>
                                     <label htmlFor="address">Address</label>
-                                    <textarea name="address" rows={2} res id="address" placeholder='Enter your address'></textarea>
+                                    <textarea value={details.address} onChange={onChange} name="address" rows={2} res id="address" placeholder='Enter your address'></textarea>
                                 </div>
                                 <div className='d-flex flex-column my-3'>
                                     <label htmlFor="days">Package (45,000 per night)</label>
-                                    <input type="number" name="days" id="days" placeholder='Enter number of days' />
+                                    <input value={details.days} onChange={onChange} type="number" name="days" id="days" placeholder='Enter number of days' />
                                 </div>
                                 <div className="d-flex justify-content-between my-3">
                                     <div className='d-flex flex-column '>
                                         <label htmlFor="contact">Contact</label>
-                                        <input type="number" name="contact" id="contact" placeholder='Your Contact number' />
+                                        <input value={details.contact} onChange={onChange} type="number" name="contact" id="contact" placeholder='Your Contact number' />
                                     </div>
                                     <div className='d-flex flex-column'>
                                         <label htmlFor="Emergencycontact">Emergency Contact</label>
-                                        <input type="number" name="Emergencycontact" id="Emergencycontact" placeholder='Emergency contact number' />
+                                        <input value={details.Emergencycontact} onChange={onChange} type="number" name="Emergencycontact" id="Emergencycontact" placeholder='Emergency contact number' />
                                     </div>
                                 </div>
                                 <div className='d-flex flex-column my-3'>
                                     <label htmlFor="rooms">Rooms</label>
-                                    <input type="number" name="rooms" id="rooms" placeholder='Enter no of rooms to book' />
+                                    <input value={details.rooms} onChange={onChange} type="number" name="rooms" id="rooms" placeholder='Enter no of rooms to book' />
                                 </div>
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="readmore" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="readmore">Submit</button>
+                            <button ref={closeModal} type="button" className="readmore" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="readmore" onClick={handleBooking}>Submit</button>
                         </div>
                     </div>
                 </div>

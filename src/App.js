@@ -17,6 +17,7 @@ import PlacesDetail from './Components/Places/PlacesDetail';
 import Places from './Components/Places/Places';
 import Tulip from './Admins/Tulip';
 import Profile from './Admins/Profile';
+import Requests from './Admins/Requests';
 const App = () => {
   return (
     <>
@@ -49,6 +50,8 @@ const App = () => {
           <Route exact path="/Admin" element={<Tulip />}>
           </Route>
           <Route exact path="/Profile" element={<Profile />}>
+          </Route>
+          <Route exact path="/Request" element={<Requests />}>
           </Route>
           
 

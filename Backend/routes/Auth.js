@@ -61,7 +61,7 @@ router.post('/login', [
     try {
         let loggedinuser = await user.findOne({email})
         if(!loggedinuser){
-            return res.status(400).json({success, error:"Please try to login with correct credentials"})
+            return res.status(400).json({success, error:"Pleases try to login with correct credentials"})
         }
         const passwordCompare = await bcrypt.compare(password, loggedinuser.password)
         if(!passwordCompare){
@@ -75,7 +75,7 @@ router.post('/login', [
         }
         success = true;
         const token  = jwt.sign(data, JWT_SECRET);
-        res.json({success:success, token:token, name:loggedinuser.name});
+        res.json({success:success, token:token, name:loggedinuser.name, email:loggedinuser.email});
     }catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error occurred");
