@@ -11,6 +11,9 @@ import PlacesCard from './PlacesCard'
 import About from '../About'
 
 const Places = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const [posts, setPosts] = useState([])
 
     useEffect(() => {

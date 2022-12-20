@@ -4,8 +4,14 @@ import logo from '../../Images/logo.png'
 import './Auth.css'
 import bg from '../../Images/blurbg.jpg'
 import lowerbg from '../../Images/bg.jpg'
+import Alert from '../Models/Alert'
 
 const Login = () => {
+
+    const [error, setError] = useState(false)
+    const [message1, setMessage1] = useState('');
+    const [message2, setMessage2] = useState('')
+
     let location = useLocation();
     let navigate = useNavigate();
 
@@ -15,7 +21,10 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         if (loginCred.password.length < 5 || loginCred.email.length === 0) {
-            alert("please Enter Valid Email and Password")
+            setError(true);
+            setMessage1('Warning');
+            setMessage2('please Enter Valid Email and Password')
+
             e.preventDefault();
         } else {
 
@@ -33,8 +42,11 @@ const Login = () => {
                 localStorage.setItem('token', json.token);
                 localStorage.setItem('name', json.name);
                 localStorage.setItem('email', json.email);
-                alert('Admin Login Success');
-                navigate('/Admin')
+                setError(true);
+                setMessage1('Success');
+                setMessage2('Admin Login Successfully')
+
+                navigate('/')
             } else {
                 e.preventDefault();
                 const response = await fetch(`${url}/api/auth/login`, {
@@ -50,10 +62,17 @@ const Login = () => {
                     //SAVE THE AUTH TOKEN AND REDIRECT
                     localStorage.setItem('token', json.token);
                     localStorage.setItem('name', json.name);
-                    alert('Login Success');
+                    localStorage.setItem('email', loginCred.email);
+                    setError(true);
+                    setMessage1('Success');
+                    setMessage2('Login Success')
+
                     navigate('/')
                 } else {
-                    alert("Invalid Credintials");
+                    setError(true);
+                    setMessage1('Error');
+                    setMessage2('Invalid Credintials')
+
                 }
             }
 
@@ -128,6 +147,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            {error && <Alert message1={message1} message2={message2} setError={setError} />}
         </>
     )
 }

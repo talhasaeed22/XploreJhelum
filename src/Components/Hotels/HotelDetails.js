@@ -4,6 +4,9 @@ import { useLocation, useNavigate, } from 'react-router-dom';
 import About from '../About';
 
 const HotelDetails = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const location = useLocation();
     const navigate = useNavigate();
     const ref = useRef();

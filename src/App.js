@@ -18,7 +18,11 @@ import Places from './Components/Places/Places';
 import Tulip from './Admins/Tulip';
 import Profile from './Admins/Profile';
 import Requests from './Admins/Requests';
+import Institutions from './Components/Institutions/Institutions'
+import InstitutionDetails from './Components/Institutions/InstitutionDetails';
 const App = () => {
+
+  
   return (
     <>
 
@@ -27,7 +31,8 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route exact path="/" element={<Home />}>
+        
+          <Route exact path='/' element={ <Home />}>
           </Route>
           <Route exact path="/Hotels" element={<Hotels />}>
           </Route>
@@ -44,6 +49,10 @@ const App = () => {
           <Route exact path="/PlacesDetails" element={<PlacesDetail />}>
           </Route>
           <Route exact path="/Places" element={<Places />}>
+          </Route>
+          <Route exact path="/Institutions" element={<Institutions />}>
+          </Route>
+          <Route exact path="/InstitutionDetails" element={<InstitutionDetails />}>
           </Route>
 
           {/* //Admin Routes */}

@@ -13,9 +13,15 @@ const Footer = () => {
         let path = `/Login`;
         navigate(path);
     }
+    const handleLogout = () => {
+        localStorage.setItem('token', '');
+        localStorage.setItem('name', '');
+        localStorage.removeItem('email');
+        navigate('/Login');
+    }
     return (
         <>
-            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname === '/Request' || location.pathname==='/Profile' || location.pathname ==='/Signup' || location.pathname === '/Admin') && 'd-none'} `}>
+            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname === '/Request' || location.pathname==='/Profile' || location.pathname ==='/Signup' || location.pathname ==='/Admin' ) && 'd-none'} `}>
                 <div className="container innerContainer">
                     <div className='left'>
                         <div className="col">
@@ -29,8 +35,8 @@ const Footer = () => {
                             <span className="heading">Services</span>
                             <span className="items" onClick={()=>{navigate('/Hotels')}} >Hotels</span>
                             <span className="items" onClick={()=>{navigate('/Restaurants')}} >Resturents</span>
-                            <span className="items" >Institutions</span>
-                            <span className="items" >Places</span>
+                            <span className="items"  onClick={()=>{navigate('/Institutions')}} >Institutions</span>
+                            <span className="items"  onClick={()=>{navigate('/Places')}} >Places</span>
 
                         </div>
                         <div className="col">
@@ -46,7 +52,9 @@ const Footer = () => {
                         <div className="spanheading">
                             <span>It&apos;s safe. It&apos;s easy.</span>
                             <span>It&apos;s <span style={{color:'#bfbfbf'}}>XploreJhelum</span></span>
-                        <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>
+                        
+
+                        {!localStorage.getItem('token') ? <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>: <label className={location.pathname === '/' ? 'text-light' : 'text-dark'} style={{ fontSize: '1.2rem', fontWeight:'bold' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
                         </div>
                         <div className="icons">
                             <i className="fa fa-facebook-square" aria-hidden="true"></i>

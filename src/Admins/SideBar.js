@@ -52,7 +52,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/login' onClick={signout} className='side-logout Link'>
+                    <Link to='/Login' onClick={signout} className='side-logout Link'>
                         <i className="fa sidefa fa-sign-out" aria-hidden="true"></i>
                         <span className='side-nav-item'>Logout</span>
                     </Link>

@@ -12,7 +12,9 @@ import About from '../About'
 const Restaurants = () => {
 
     const [posts, setPosts] = useState([])
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     useEffect(() => {
         getImages();
     }, [])

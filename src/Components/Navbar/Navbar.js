@@ -19,13 +19,14 @@ const Navbar = () => {
         navigate(path);
     }
     const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('name');
+        localStorage.setItem('token', '');
+        localStorage.setItem('name', '');
+        localStorage.removeItem('email');
         navigate('/Login');
     }
     return (
         <>
-            <nav  className={`navbar navbar-expand-lg ${(location.pathname === '/Login'|| location.pathname==='/Profile'  || location.pathname === '/Signup' || location.pathname==='/Admin' || location.pathname === '/Request') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)', position:'sticky', top:'0px', zIndex:'1000'}}>
+            <nav  className={`navbar navbar-expand-lg ${(location.pathname === '/Login'|| location.pathname==='/Profile'  || location.pathname === '/Signup' || location.pathname === '/Admin' || location.pathname === '/Request') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)', position:'sticky', top:'0px', zIndex:'1000'}}>
                 <div className="container" >
 
                     <div className='d-flex align-items-center'>
@@ -47,10 +48,10 @@ const Navbar = () => {
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Restaurants' && 'active'}  `} aria-current="page" to="/Restaurants" style={{ borderBottom: (location.pathname === '/Restaurants' || location.pathname === '/RestaurantDetails') && '2px solid black' }}>Restaurants</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} `} aria-current="page" to="/">Institutions</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Institutions' && 'active'}  `}  aria-current="page" to="/Institutions" style={{ borderBottom: (location.pathname === '/Institutions' || location.pathname === '/InstitutionDetails') && '2px solid black' }}>Institutions</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} `} aria-current="page" to="/">Places</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Places' && 'active'}  `}  aria-current="page" to="/Places"  style={{ borderBottom: (location.pathname === '/Places' || location.pathname === '/PlacesDetails') && '2px solid black' }}>Places</Link>
                             </li>
 
                             <li className="nav-item mx-3">

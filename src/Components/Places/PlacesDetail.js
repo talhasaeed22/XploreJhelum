@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 // import { useRef } from 'react';
 import { useLocation, useNavigate, } from 'react-router-dom';
 import About from '../About';
 const PlacesDetail = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <>
             <div className="container d-flex justify-content-center">

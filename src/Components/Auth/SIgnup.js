@@ -23,6 +23,9 @@ const SIgnup = () => {
         if(json.success){
             //SAVE THE AUTH TOKEN AND REDIRECT
             localStorage.setItem('token', json.token);
+            localStorage.setItem('email', json.signupCred.email);
+            localStorage.setItem('name', signupCred.name);
+
             alert("Signed Up");
             nevigate('/')
         }else{
