@@ -51,7 +51,7 @@ router.post('/getrooms', async (req, res) => {
     }
 })
 
-router.put('/assignroom/:rid', async (req, res) => {
+router.put('/assignroom', async (req, res) => {
     try {
 
         const newRoom = {};
@@ -59,14 +59,21 @@ router.put('/assignroom/:rid', async (req, res) => {
 
         newRoom.available = "no";
 
-
-        let editedRoom = await room.findByIdAndUpdate(req.params.rid, { $set: newRoom }, { new: true })
+        let selectedroom = await room.findOne({"hotel":req.body.hotel, "number":req.body.roomNumber})
+        // res.send(selectedroom)
+        let editedRoom = await room.findByIdAndUpdate(selectedroom._id, { $set: newRoom }, { new: true })
+        
         res.send(editedRoom)
     }
     catch (error) {
         res.status(500).send("Internal Server Error Occurred. Please Try Again.")
         console.log(error);
     }
+})
+
+router.delete('/deleterequest', async (req, res) => {
+    let request = await booking.deleteOne({roomNumber:req.body.roomNumber})
+    res.send(request)
 })
 
 router.put('/deleteroom/:rid', async (req, res) => {

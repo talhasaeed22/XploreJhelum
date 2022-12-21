@@ -5,9 +5,10 @@ import RequestTable from './Table'
 import { useState } from 'react'
 const Requests = () => {
 
+  const [updated, setUpdated] = useState(false)
   useEffect(() => {
     getRequests();
-  }, [])
+  }, [updated])
 
   const url = 'http://localhost:5000'
 
@@ -48,7 +49,7 @@ const Requests = () => {
         <div className='d-flex flex-colmn w-100 px-5 align-items-center justify-content-center'>
           <div className='AdminHeader px-5 py-5 w-100 d-flex flex-column gap-3 '>
             <span className="AdminPrimaryHeading" style={{ textAlign: "center" }}>Your Booking Requests</span>
-            <RequestTable data={data} />
+            <RequestTable data={data} setUpdated={setUpdated} updated={updated} />
           </div>
         </div>
 
