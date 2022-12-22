@@ -44,9 +44,14 @@ const SideBar = () => {
                         <span className='side-nav-item'>Requests</span>
                     </Link>
                 </li>
-
                 <li>
-                    <Link to="/" className='Link'>
+                    <Link to="/Guests" className={`Link ${location.pathname === '/Guests' && 'sideactive'}`}>
+                        <i className="fa sidefa fa-users" aria-hidden="true"></i>
+                        <span className='side-nav-item'>Guests</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/Admin" className='Link'>
                         <i className="fa sidefa fa-cog" aria-hidden="true"></i>
                         <span className='side-nav-item'>Settings</span>
                     </Link>

@@ -20,6 +20,7 @@ import Profile from './Admins/Profile';
 import Requests from './Admins/Requests';
 import Institutions from './Components/Institutions/Institutions'
 import InstitutionDetails from './Components/Institutions/InstitutionDetails';
+import Guests from './Admins/Guests';
 const App = () => {
 
   
@@ -61,6 +62,8 @@ const App = () => {
           <Route exact path="/Profile" element={<Profile />}>
           </Route>
           <Route exact path="/Request" element={<Requests />}>
+          </Route>
+          <Route exact path="/Guests" element={<Guests />}>
           </Route>
           
 

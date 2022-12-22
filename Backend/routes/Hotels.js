@@ -71,12 +71,22 @@ router.put('/assignroom', async (req, res) => {
     }
 })
 
-router.delete('/deleterequest', async (req, res) => {
-    let request = await booking.deleteOne({roomNumber:req.body.roomNumber})
-    res.send(request)
+router.put('/deleterequest', async (req, res) => {
+    try {
+        const newReq = {};
+
+
+        newReq.status = "Resolved";
+
+        let request = await booking.findByIdAndUpdate(req.body.id, { $set: newReq }, { new: true})
+        
+        res.send({success:true})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
-router.put('/deleteroom/:rid', async (req, res) => {
+router.put('/deleteroom', async (req, res) => {
     try {
 
         const newRoom = {};
@@ -84,14 +94,21 @@ router.put('/deleteroom/:rid', async (req, res) => {
 
         newRoom.available = "yes";
 
+        let selectedroom = await room.findOne({"hotel":req.body.hotel, "number":req.body.roomNumber})
+        // res.send(selectedroom)
+        let editedRoom = await room.findByIdAndUpdate(selectedroom._id, { $set: newRoom }, { new: true })
 
-        let editedRoom = await room.findByIdAndUpdate(req.params.rid, { $set: newRoom }, { new: true })
         res.send(editedRoom)
     }
     catch (error) {
         res.status(500).send("Internal Server Error Occurred. Please Try Again.")
         console.log(error);
     }
+})
+
+router.delete('/removeguest', async (req, res)=>{
+    await booking.deleteOne({_id:req.body.id});
+    res.send({success:true})
 })
 
 router.post('/booking',  async (req, res) => {
@@ -117,6 +134,18 @@ router.post('/getrequest', async (req, res) => {
     let success = false;
     try {
         const foundRequests = await booking.find({ hotel: req.body.hotel, status:"Pending" });
+        success = true
+        res.send({ requests: foundRequests, success: success });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ success: success, error: "Internal Server Error occurred" });
+    }
+})
+
+router.post('/getguests', async (req, res) => {
+    let success = false;
+    try {
+        const foundRequests = await booking.find({ hotel: req.body.hotel, status:"Resolved" });
         success = true
         res.send({ requests: foundRequests, success: success });
     } catch (error) {
