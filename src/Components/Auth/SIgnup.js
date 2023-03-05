@@ -16,14 +16,14 @@ const SIgnup = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({name:signupCred.name,email:signupCred.email, password:signupCred.password, age:signupCred.age, gender:signupCred.gender})
+            body: JSON.stringify({name:signupCred.name, email:signupCred.email, password:signupCred.password})
         });
         const json = await response.json();
         console.log(json);
         if(json.success){
             //SAVE THE AUTH TOKEN AND REDIRECT
             localStorage.setItem('token', json.token);
-            localStorage.setItem('email', json.signupCred.email);
+            localStorage.setItem('email', signupCred.email);
             localStorage.setItem('name', signupCred.name);
 
             alert("Signed Up");

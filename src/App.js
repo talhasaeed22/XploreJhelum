@@ -21,6 +21,7 @@ import Requests from './Admins/Requests';
 import Institutions from './Components/Institutions/Institutions'
 import InstitutionDetails from './Components/Institutions/InstitutionDetails';
 import Guests from './Admins/Guests';
+import Contact from './Components/Contact';
 const App = () => {
 
   
@@ -54,6 +55,8 @@ const App = () => {
           <Route exact path="/Institutions" element={<Institutions />}>
           </Route>
           <Route exact path="/InstitutionDetails" element={<InstitutionDetails />}>
+          </Route>
+          <Route exact path="/Contact" element={<Contact />}>
           </Route>
 
           {/* //Admin Routes */}

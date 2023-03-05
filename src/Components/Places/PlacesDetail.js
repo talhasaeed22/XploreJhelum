@@ -41,7 +41,10 @@ const PlacesDetail = () => {
                 </div>
             </div>
 
-            
+            <div className="container my-5">
+                <span style={{ color: 'rgb(191 28 28)', fontSize:30, fontWeight:'bold' }}>Location</span>
+                <img src={location.state.map} alt="map" className="img-fluid" />
+            </div>
 
             <div className="container my-3">
                 {/* <button className="readmore mx-2" onClick={openModal}>Book Now</button> */}

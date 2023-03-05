@@ -28,12 +28,13 @@ const [loading, setLoading] = useState(false)
             const querySnapshot = await getDocs(collection(db, "Hotels"));
             querySnapshot.forEach((doc) => {
                 console.log('Inside')
-                const { name, image, number } = doc.data();
+                const { name, image, number, map } = doc.data();
                 postItem.push({
                     id:doc.id,
                     name: name,
                     image: image,
                     number: number,
+                    map:map
                 });
             });
             console.log(postItem)
@@ -54,12 +55,12 @@ const [loading, setLoading] = useState(false)
 
                 <div className="container">
                     <h1 className='primaryHeading' style={{ color: 'rgb(191 28 28)' }}>Luxury Hotels</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero earum suscipit ipsam ad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti placeat esse inventore dignissimos consequatur! Libero alias temporibus est tempore impedit perspiciatis voluptatum id pariatur, vel odit nobis dolor corrupti sapiente.</p>
+                    <p>If you’re looking to treat yourself, our website provides a high-end hotel that will provide an extra something special to make your trip even more memorable. These five-star properties feature lavish luxuries with sweeping city views, in-room massage and spacious private terraces. They often have a central location which makes exploring the main sights a breeze.</p>
                     <div className="container">
                         <div className="row ">
                             {loading ? <div className='d-flex align-items-center my-5 justify-content-center'><LoadingSpinner/></div> : posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <HotelsCard key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <HotelsCard map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
                             {/* <div className="col-md-4 my-3 col-sm-6 col-12">

@@ -17,7 +17,7 @@ export default function RequestTable({ data, updated, setUpdated, Guests }) {
     
     const json = await response.json();
     console.log(json)
-    alert(id)
+
 
     const reqresponse = await fetch(`${url}/api/hotel/deleterequest`, {
       method: 'PUT',
@@ -45,7 +45,7 @@ export default function RequestTable({ data, updated, setUpdated, Guests }) {
     
     const json = await response.json();
     console.log(json)
-    alert(id)
+    
 
     const reqresponse = await fetch(`${url}/api/hotel/removeguest`, {
       method: 'DELETE',

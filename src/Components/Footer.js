@@ -39,13 +39,13 @@ const Footer = () => {
                             <span className="items"  onClick={()=>{navigate('/Places')}} >Places</span>
 
                         </div>
-                        <div className="col">
+                        {!localStorage.getItem('token') ? <div className="col">
                             <span className="heading">Register</span>
                             <span className="items" onClick={login}>Login</span>
                             <span className="items" onClick={signup}>Signup</span>
                             
 
-                        </div>
+                        </div> : <></>}
                     </div>
 
                     <div className="right">
@@ -54,7 +54,7 @@ const Footer = () => {
                             <span>It&apos;s <span style={{color:'#bfbfbf'}}>XploreJhelum</span></span>
                         
 
-                        {!localStorage.getItem('token') ? <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>: <label className={location.pathname === '/' ? 'text-light' : 'text-dark'} style={{ fontSize: '1.2rem', fontWeight:'bold' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
+                        {!localStorage.getItem('token') ? <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>: <label style={{ fontSize: '1.2rem', fontWeight:'bold', color:'white' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
                         </div>
                         <div className="icons">
                             <i className="fa fa-facebook-square" aria-hidden="true"></i>

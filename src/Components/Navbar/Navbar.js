@@ -55,8 +55,10 @@ const Navbar = () => {
                             </li>
 
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} `} aria-current="page" to="/">Contact</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Contact' && 'active'}  `}  aria-current="page" to="/Contact"  style={{ borderBottom: (location.pathname === '/Contact' || location.pathname === '/Contact') && '2px solid black' }}>Contact</Link>
                             </li>
+
+                            
 
 
                         </ul>

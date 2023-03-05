@@ -32,7 +32,7 @@ const Home = () => {
                 <h3 className="secHeading">Nothing is more important for us than the choice of our users the safety of them </h3>
                 <div >
                     <p style={{ marginBottom: '0rem' }} className="smallpara">Xplore Jhelum is a well maintained and established website which provides information about the necessasities of almost every aspects of life.</p>
-                    <p className="smallpara">We provide you information about Hotels, and (yahan woh 2 3 chezeen wxplain kr do jo jo tm bana re ho)</p>
+                    <p className="smallpara">We provide you information about hotels, restaurants, institutions and places.</p>
                     <p className="smallpara">We also provides our user an android application by which users can access to our services throught thier mobiles</p>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const Home = () => {
                     <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Restaurents</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Restaurants">View All</Link>
                 </div>
-                <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
+                <p className='smallpara ' style={{paddingRight:'15%'}}>The days of discovering restaurants as you pass by on the street are long gone. When choosing where to eat or drink, people now turn more quickly to Google and check your restaurant description and reviews. To help you rank better in Google with updated information about your restaurants, our website are giving you all restaurants deatsils at one place. Restaurants offer the best way to get a fantastic meal and spend some time relaxing. When it comes to presenting that meal, most people just want their food without dealing with any kind of fanfare that complicates everything</p>
                 <div className="container my-5">
                     <HomeRestaurantBox/>
                 </div>
@@ -100,7 +100,7 @@ const Home = () => {
                     <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Institutions</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Institutions">View All</Link>
                 </div>
-                <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
+                <p className='smallpara ' style={{paddingRight:'15%'}}>We believe that to be extraordinary, students need to be inspired by many experiences. Every day our students find countless opportunities to fully immerse themselves in academics, art, athletics, performance, and the pursuit of challenge, creativity, healthy competition, and balance. Our website offer some institutions of Jhelum for students to find and explore their passions.</p>
                 <div className="container my-5">
                     <HomeInstitutionBox/>
                 </div>
@@ -112,7 +112,7 @@ const Home = () => {
                     <h3 className="primaryHeading" style={{ color: 'rgb(191 28 28)' }}>Trip Places</h3>
                     <Link className='fs-5 fw-bold ' style={{color:'#e32213'}} to="/Places">View All</Link>
                 </div>
-                <p className='smallpara ' style={{paddingRight:'15%'}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum sunt obcaecati maxime architecto est, earum quia laudantium aliquid ipsam fugiat distinctio nihil reiciendis sint voluptates adipisci in quaerat minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit assumenda nemo obcaecati dolor amet natus impedit ratione consectetur. At blanditiis hic eius et. Fugiat, unde! Mollitia aut quis quos explicabo!</p>
+                <p className='smallpara ' style={{paddingRight:'15%'}}>Jhelum is an ancient city, which has seen many eras of humankind. The City is developing to keep up with the modern world. Notable places to visit include the Khewra salt mine, 16th century’s Rohtas Fort and Mangla dam. If you're looking for an underrated travel destination with a rich cultural history, you might want to consider visiting Jhelum through our website.</p>
                 <div className="container my-5">
                     <HomePlacesBox/>
                 </div>

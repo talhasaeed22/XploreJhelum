@@ -49,11 +49,9 @@ const RestaurantDetails = (props) => {
                 </div>
             </div>
 
-            <div className="container packages">
-                <span>Our Restaurant's Menu</span>
-                <div className='d-flex gap-2 '>
-                    <span>Menu</span>
-                </div>
+            <div className="container my-5">
+                <span style={{ color: 'rgb(191 28 28)', fontSize:30, fontWeight:'bold' }}>Location</span>
+                <img src={location.state.map} alt="map" className="img-fluid" />
             </div>
 
             <div className="container my-3">

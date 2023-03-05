@@ -25,12 +25,13 @@ const Restaurants = () => {
             const querySnapshot = await getDocs(collection(db, "Restaurants"));
             querySnapshot.forEach((doc) => {
                 console.log('Inside')
-                const { name, image, number } = doc.data();
+                const { name, image, number, map } = doc.data();
                 postItem.push({
                     id: doc.id,
                     name: name,
                     image: image,
                     number: number,
+                    map:map
                 });
             });
             console.log(postItem)
@@ -53,7 +54,7 @@ const Restaurants = () => {
                     <div className="row ">
                         {posts.map((item)=>{
                             return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                            <RestaurantsCard map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                         </div>
                         })}
                         {/* <div className="col-md-4 my-3 col-sm-6 col-12">

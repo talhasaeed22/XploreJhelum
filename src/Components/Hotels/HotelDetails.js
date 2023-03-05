@@ -2,8 +2,12 @@ import React from 'react'
 import { useRef, useState, useEffect } from 'react';
 import { useLocation, useNavigate, } from 'react-router-dom';
 import About from '../About';
+import Alert from '../Models/Alert';
 
-const HotelDetails = (props) => {
+const HotelDetails = () => {
+    const [error, setError] = useState(false)
+    const [message1, setMessage1] = useState('');
+    const [message2, setMessage2] = useState('')
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
@@ -32,8 +36,9 @@ const HotelDetails = (props) => {
             body: JSON.stringify({ name: details.name, email: details.email, address: details.address, days: details.days, contact: details.contact, emergencyContact: details.Emergencycontact, roomNumber: details.rooms, hotel: location.state.name, status: 'Pending' })
         });
         const json = await response.json();
-
-        alert('You have made the booking. Wait for confirmation')
+        setError(true);
+        setMessage1('Success');
+        setMessage2('please Wait for Confirmation')
         close();
         console.log(json)
 
@@ -102,6 +107,10 @@ const HotelDetails = (props) => {
                     <span>Per night</span>
                     <span className='fw-bold' style={{ color: 'rgb(191 28 28)' }}>45,000</span>
                 </div>
+            </div>
+            <div className="container my-5">
+                <span style={{ color: 'rgb(191 28 28)', fontSize:30, fontWeight:'bold' }}>Location</span>
+                <img src={location.state.map} alt="map" className="img-fluid" />
             </div>
 
             <div className="container my-3">
@@ -178,6 +187,8 @@ const HotelDetails = (props) => {
                     </div>
                 </div>
             </div>
+            {error && <Alert message1={message1} message2={message2} setError={setError} />}
+
         </>
     )
 }

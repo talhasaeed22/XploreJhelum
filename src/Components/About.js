@@ -6,7 +6,29 @@ const About = () => {
             <div className="container">
                 <div className="pt-5 d-flex flex-column gap-3 w-75 ">
                     <h1 className='fw-bold fs-2'>What to Expect from <br /> <span style={{ color: 'rgb(191 28 28)' }}>Xplore Jhelum</span></h1>
-                    <p className="smallpara">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab doloribus quia velit, voluptates sit nulla impedit quae magni nisi dolor at mollitia nesciunt facilis similique libero delectus, deserunt laudantium in animi maxime ea nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam et veritatis cupiditate odit laborum neque, perspiciatis minima ipsa sunt consequuntur rerum ad nisi at corrupti inventore iure molestias aspernatur.</p>
+                    <p className="smallpara">In today's users have high expectations of the websites they visit, though the chances are that you will have much of this already in place. The first thing that users expect from Xplore Jhelum website that</p>
+                </div>
+                <div className='d-flex flex-column gap-1'>
+                    <div style={{display:'flex', flexDirection:'row', gap:'12px',}}>
+                        <i className="fa fa-check mt-1" style={{color:'rgb(191 28 28)'}} aria-hidden="true"></i>
+                        <p style={{margin:'0px', color:'gray'}}>Our website satisfies user intent and has a clear goal.</p>
+                    </div>
+                    <div style={{display:'flex', flexDirection:'row', gap:'12px',}}>
+                        <i className="fa fa-check mt-1" style={{color:'rgb(191 28 28)'}} aria-hidden="true"></i>
+                        <p style={{margin:'0px', color:'gray'}}>Our website is trustworthy, safe and secure.</p>
+                    </div>
+                    <div style={{display:'flex', flexDirection:'row', gap:'12px',}}>
+                        <i className="fa fa-check mt-1" style={{color:'rgb(191 28 28)'}} aria-hidden="true"></i>
+                        <p style={{margin:'0px', color:'gray'}}>Our site has awesome, user-centered content.</p>
+                    </div>
+                    <div style={{display:'flex', flexDirection:'row', gap:'12px',}}>
+                        <i className="fa fa-check mt-1" style={{color:'rgb(191 28 28)'}} aria-hidden="true"></i>
+                        <p style={{margin:'0px', color:'gray'}}>Our site is mobile-friendly.</p>
+                    </div>
+                    <div style={{display:'flex', flexDirection:'row', gap:'12px',}}>
+                        <i className="fa fa-check mt-1" style={{color:'rgb(191 28 28)'}} aria-hidden="true"></i>
+                        <p style={{margin:'0px', color:'gray'}}>Our website has a great design.</p>
+                    </div>
                 </div>
             </div>
             <div className="pt-5 text-center" style={{ padding: '0 25%' }}>

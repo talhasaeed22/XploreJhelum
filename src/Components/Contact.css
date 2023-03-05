@@ -1,0 +1,55 @@
+.c-parent{
+    padding:3rem 5rem 3rem 5rem
+}
+.inp{
+    width: 20rem;
+    height: 2rem;
+    padding: 0.3rem;
+    outline: none;
+    
+    
+    font-size: 16px;
+}
+.fab{
+    font-size: 1.8rem;
+}
+#icon-gap{
+    gap: 2rem
+}
+textarea{
+    height: 4rem!important;
+    
+}
+
+@media(max-width:1160px){
+    .c-parent{
+        flex-direction: column;
+        margin-top: 10%;
+    }
+    .c-right{
+        margin-top: 10%;
+    }
+
+}
+@media(max-width:460px){
+    .inp{
+        width: 13rem;
+    }
+    #c-icons i{
+        font-size: 1.2rem;
+    }
+    .c-parent{
+        padding: 0 12px 0 12px;
+    }
+    
+
+}
+
+@media(max-width:300px){
+    #icon-gap{
+        gap: 1rem
+    }
+    .inp{
+        width: 10rem;
+    }
+}
