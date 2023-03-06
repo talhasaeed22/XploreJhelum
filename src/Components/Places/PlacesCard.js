@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const PlacesCard = (props) => {
     const nevigate = useNavigate();
     const routeChange = () => {
-        nevigate('/PlacesDetails', { state: { name: props.name, image: props.image, map:props.map } })
+        nevigate('/PlacesDetails', { state: { name: props.name, image: props.image, map:props.map, desc:props.desc } })
     }
     return (
         <div className='hotelCard'>
@@ -13,7 +13,7 @@ const PlacesCard = (props) => {
             </div>
             <div className='d-flex flex-column p-4'>
                 <h3 className='fw-bold'>{props.name}</h3>
-                <p className="smallpara">Places Description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime iusto, cumque blanditiis fugiat neque dolorem ad</p>
+                <p className="smallpara">{props.desc.slice(0, 250)}...</p>
                 <h3 style={{ color: 'rgb(191 28 28)', fontWeight: "600" }}>Features</h3>
                 <div className='d-flex justify-content-around my-2'>
                     <img src={props.feature1} alt="pool" className="img-fluid" width={30} />

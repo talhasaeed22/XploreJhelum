@@ -25,13 +25,14 @@ const Places = () => {
             const postItem = [];
             const querySnapshot = await getDocs(collection(db, "Places"));
             querySnapshot.forEach((doc) => {
-                const { name, image, number, map } = doc.data();
+                const { name, image, number, map, desc } = doc.data();
                 postItem.push({
                     id:doc.id,
                     name: name,
                     image: image,
                     number: number,
-                    map:map
+                    map:map,
+                    desc
                 });
             });
             console.log(postItem)
@@ -46,16 +47,16 @@ const Places = () => {
             <div style={{ backgroundImage: 'radial-gradient(at center center,rgb(241, 244, 255) 0%,white 83%)' }} className='py-5'>
                 <div className="container text-center w-75" >
                     <h1 className='primaryHeading'>Finest Places</h1>
-                    <p className="smallpara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ratione expedita accusamus est doloribus maxime esse voluptates atque non, cum, id vero eveniet autem sequi tempora accusantium quis perferendis mollitia?</p>
+                    <p className="smallpara">Jhelum is an ancient city, which has seen many eras of humankind. The City is developing to keep up with the modern world. Notable places to visit include the Khewra salt mine, 16th century’s Rohtas Fort and Mangla dam. If you’re looking for an underrated travel destination with a rich cultural history, you might want to consider visiting Jhelum through our website.</p>
                 </div>
 
                 <div className="container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero earum suscipit ipsam ad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti placeat esse inventore dignissimos consequatur! Libero alias temporibus est tempore impedit perspiciatis voluptatum id pariatur, vel odit nobis dolor corrupti sapiente.</p>
+                  
                     <div className="container">
                         <div className="row ">
                             {posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <PlacesCard map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <PlacesCard desc={item.desc} map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
                             {/* <div className="col-md-4 my-3 col-sm-6 col-12">

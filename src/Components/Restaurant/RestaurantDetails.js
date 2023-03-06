@@ -24,8 +24,8 @@ const RestaurantDetails = (props) => {
             <div className="container">
                 {/* <h1 className='primaryHeading'>{location.state.name}</h1> */}
                 <h1 className='primaryHeading' style={{ color: 'rgb(191 28 28)' }}>{location.state.name}</h1>
-                <p className='smallpara'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sapiente perferendis rerum architecto animi recusandae vero neque, sint ducimus. Sequi animi reiciendis soluta impedit dolorem maiores maxime, cupiditate necessitatibus et quaerat sed quia tempora veritatis, quae eveniet dolorum modi explicabo natus aliquam iusto similique! Voluptatum assumenda alias tenetur veritatis praesentium?</p>
-                <p className='smallpara'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex soluta in reiciendis quae et excepturi voluptatem est architecto suscipit quod. Quas suscipit repudiandae ea molestias numquam nisi eligendi reiciendis esse?</p>
+                
+                <p className='smallpara'>{location.state.desc}</p>
             </div>
             <div className="container my-2">
                 <div className="row my-3">
@@ -52,6 +52,14 @@ const RestaurantDetails = (props) => {
             <div className="container my-5">
                 <span style={{ color: 'rgb(191 28 28)', fontSize:30, fontWeight:'bold' }}>Location</span>
                 <img src={location.state.map} alt="map" className="img-fluid" />
+            </div>
+
+            <div className="container my-5 d-flex flex-column">
+                <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Contact Us: </span>
+                <span>For further details and queries contact us by: </span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
+                    <span style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>- {location.state.contact}</span>
+                </div>
             </div>
 
             <div className="container my-3">
