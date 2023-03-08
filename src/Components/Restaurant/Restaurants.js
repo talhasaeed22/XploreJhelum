@@ -56,24 +56,10 @@ const Restaurants = () => {
                     <div className="row ">
                         {posts.map((item)=>{
                             return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard desc={item.desc} contact={item.contact} map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                            <RestaurantsCard desc={item.desc} contact={item.contact} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                         </div>
                         })}
-                        {/* <div className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard name="McDonald's" image={[mc1, mc2, mc3, mc4, mc5, mc6]} feature2={pool} feature1={drink} feature3={breakfast} />
-                        </div>
-                        <div className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard name="Chaaye Khana" image={[chaye1, chaye2, chaye3, chaye4, chaye5]} feature1={pool} feature3={drink} feature2={breakfast} />
-                        </div>
-                        <div className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard name="Monarch Lounge" image={[monarch1, monarch2, monarch3, monarch4, monarch5, monarch6]} feature1={pool} feature3={drink} feature2={breakfast} />
-                        </div>
-                        <div className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard name="China citi" image={[china1, china2, china3, china4, china5, china6]} feature1={pool} feature3={drink} feature2={breakfast} />
-                        </div>
-                        <div className="col-md-4 my-3 col-sm-6 col-12">
-                            <RestaurantsCard name="Asian Cuisine Family Restaurant" image={[asian1, asian2, asian3, asian4, asian5, asian6]} feature1={pool} feature3={drink} feature2={breakfast} />
-                        </div> */}
+                        
                     </div>
                 </div>
             </div>

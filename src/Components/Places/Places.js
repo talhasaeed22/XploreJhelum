@@ -56,27 +56,10 @@ const Places = () => {
                         <div className="row ">
                             {posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <PlacesCard desc={item.desc} map={item.map} key={item.id} image={[item.image[0], item.image[1], item.image[2], item.image[3], item.image[4], item.image[5]]} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <PlacesCard desc={item.desc} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
-                            {/* <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[khan1, khan2, khan3, khan4]} name="Hotel Khan Plaza" feature2={pool} feature1={drink} feature3={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[inn1, inn2, inn3, inn4, inn5, inn6]} name="INN BOUTIQUE HOTEL" feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[mirpur1, mirpur2, mirpur3, mirpur4, mirpur5]} name="Mirpur AJK Serviced Villa" feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[lotus1, lotus2, lotus3, lotus4, lotus5]} name="Lotus Inn" feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[usman1, usman2, usman3, usman4, usman5, usman6]} name="Usman Lodges Ajk" feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div>
-                            <div className="col-md-4 my-3 col-sm-6 col-12">
-                                <HotelsCard image={[undrah, undrah1, undrah2, undrah3, undrah4]} name="Undrah Inn Hotel" feature1={pool} feature3={drink} feature2={breakfast} />
-                            </div> */}
+                           
                         </div>
                     </div>
                 </div>
