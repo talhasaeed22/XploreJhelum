@@ -28,7 +28,7 @@ const [loading, setLoading] = useState(false)
             const querySnapshot = await getDocs(collection(db, "Hotels"));
             querySnapshot.forEach((doc) => {
                 console.log('Inside')
-                const { name, image, number, map, email, contact, description } = doc.data();
+                const { name, image, number, map, email, contact, description, pernight } = doc.data();
                 postItem.push({
                     id:doc.id,
                     name: name,
@@ -37,7 +37,8 @@ const [loading, setLoading] = useState(false)
                     map:map,
                     email,
                     contact,
-                    description
+                    description,
+                    pernight
                 });
             });
             console.log(postItem)
@@ -63,7 +64,7 @@ const [loading, setLoading] = useState(false)
                         <div className="row ">
                             {loading ? <div className='d-flex align-items-center my-5 justify-content-center'><LoadingSpinner/></div> : posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <HotelsCard description={item.description} email={item.email} contact={item.contact} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <HotelsCard pernight={item.pernight} description={item.description} email={item.email} contact={item.contact} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
                         </div>

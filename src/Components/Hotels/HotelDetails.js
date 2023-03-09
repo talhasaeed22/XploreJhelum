@@ -118,7 +118,7 @@ const HotelDetails = () => {
                 <span>We offer following package</span>
                 <div className='d-flex gap-2'>
                     <span>Per night</span>
-                    <span className='fw-bold' style={{ color: 'rgb(191 28 28)' }}>45,000</span>
+                    <span className='fw-bold' style={{ color: 'rgb(191 28 28)' }}>PKR {location.state.pernight}</span>
                 </div>
             </div>
             <div className="container my-5">

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const HotelsCard = (props) => {
     const nevigate = useNavigate();
     const routeChange = () => {
-        nevigate('/HotelDetails', { state: { name: props.name, image:props.image, map:props.map, email:props.email, contact:props.contact, description:props.description } })
+        nevigate('/HotelDetails', { state: { name: props.name, image:props.image, map:props.map, email:props.email, contact:props.contact, description:props.description, pernight:props.pernight } })
     }
     return (
         <>
@@ -25,7 +25,7 @@ const HotelsCard = (props) => {
                         <button className="readmore " onClick={routeChange}>Read More</button>
                         <div className='d-flex flex-column' style={{ alignItems: 'flex-end' }}>
                             <span style={{ fontSize: '14px' }}>Price from</span>
-                            <span style={{ color: 'rgb(191 28 28)', fontWeight: "600", fontSize: '19px' }}>PKR 49,114 </span>
+                            <span style={{ color: 'rgb(191 28 28)', fontWeight: "600", fontSize: '19px' }}>PKR {props.pernight} </span>
                             <span style={{ fontSize: '14px' }}>per night</span>
                         </div>
                     </div>
