@@ -21,6 +21,7 @@ const HotelsCard = (props) => {
                         <img src={props.feature2} alt="pool" className="img-fluid" width={30} />
                         <img src={props.feature3} alt="pool" className="img-fluid" width={30} />
                     </div>
+                    
                     <div className='d-flex justify-content-between my-2' style={{ alignItems: 'flex-end' }}>
                         <button className="readmore " onClick={routeChange}>Read More</button>
                         <div className='d-flex flex-column' style={{ alignItems: 'flex-end' }}>
