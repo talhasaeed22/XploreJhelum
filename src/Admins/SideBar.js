@@ -58,12 +58,7 @@ const SideBar = () => {
                             <span className='side-nav-item'>Guests</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="/Admin" className='Link'>
-                            <i className="fa sidefa fa-cog" aria-hidden="true"></i>
-                            <span className='side-nav-item'>Settings</span>
-                        </Link>
-                    </li>
+                   
                     <li>
                         <Link to='/Login' onClick={signout} className='side-logout Link'>
                             <i className="fa sidefa fa-sign-out" aria-hidden="true"></i>

@@ -38,6 +38,15 @@ const { Schema } = mongoose;
         type:String,
         required:true
     },
+    date:{
+        type:String,
+    },
+    month:{
+        type:String,
+    },
+    year:{
+        type:String,
+    }
   });
 
 

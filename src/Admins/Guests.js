@@ -48,7 +48,7 @@ const Guests = () => {
     
             <div className='d-flex flex-colmn w-100 px-5 align-items-center justify-content-center'>
               <div className='AdminHeader px-5 py-5 w-100 d-flex flex-column gap-3 '>
-                <span className="AdminPrimaryHeading" style={{ textAlign: "center" }}>Your Booking Requests</span>
+                <span className="AdminPrimaryHeading" style={{ textAlign: "center" }}>Your Guests Requests</span>
                 <RequestTable data={data} setUpdated={setUpdated} updated={updated} Guests={true}/>
               </div>
             </div>

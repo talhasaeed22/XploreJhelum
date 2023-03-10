@@ -76,7 +76,7 @@ router.put('/deleterequest', async (req, res) => {
         const newReq = {};
 
 
-        newReq.status = "Resolved";
+        newReq.status = "Booked";
 
         let request = await booking.findByIdAndUpdate(req.body.id, { $set: newReq }, { new: true})
         
@@ -112,6 +112,7 @@ router.delete('/removeguest', async (req, res)=>{
 })
 
 router.post('/booking',  async (req, res) => {
+    const date = new Date();
     try {
         let newbooking = await booking.create({
             name: req.body.name,
@@ -122,7 +123,10 @@ router.post('/booking',  async (req, res) => {
             emergencyContact:req.body.emergencyContact,
             roomNumber:req.body.roomNumber,
             hotel:req.body.hotel,
-            status:req.body.status
+            status:req.body.status,
+            date: date.getDate(),
+            month: date.getMonth() + 1,
+            year: date.getFullYear()
         });
         res.send(newbooking);
     } catch (error) {
@@ -145,7 +149,7 @@ router.post('/getrequest', async (req, res) => {
 router.post('/getguests', async (req, res) => {
     let success = false;
     try {
-        const foundRequests = await booking.find({ hotel: req.body.hotel, status:"Resolved" });
+        const foundRequests = await booking.find({ hotel: req.body.hotel, status:"Booked" });
         success = true
         res.send({ requests: foundRequests, success: success });
     } catch (error) {
@@ -157,7 +161,7 @@ router.post('/getguests', async (req, res) => {
 router.post('/getAllRequest', async (req, res) => {
     let success = false;
     try {
-        const foundRequests = await booking.find({ email: req.body.email, status:"Pending" });
+        const foundRequests = await booking.find({ email: req.body.email });
         success = true
         res.send({ requests: foundRequests, success: success });
     } catch (error) {

@@ -22,7 +22,8 @@ const Profile = () => {
 
                     <div className='d-flex flex-column justify-content-cetner align-items-center'>
                         <div className='' >
-                            <img src={logo} alt="profilepic" className='img-fluid ' style={{ width: "200px", height: '200px', borderRadius: '50%' }} />
+                            {/* <img src={logo} alt="profilepic" className='img-fluid ' style={{ width: "200px", height: '200px', borderRadius: '50%' }} /> */}
+                            <i className="fa fa-user" style={{fontSize:'170px'}} aria-hidden="true"></i>
 
                         </div>
                         <span className='AdminPrimaryHeading text-black py-2'>{localStorage.getItem('name')}</span>
@@ -33,7 +34,7 @@ const Profile = () => {
                             <span className="AdminPrimaryHeading" style={{textAlign:"left"}}>Your Profile</span>
                             <span style={{fontWeight:"bold"}}>Name:<span style={{fontWeight:'normal'}}> {localStorage.getItem('name')}</span></span> 
                             <span style={{fontWeight:"bold"}}>Email: <span style={{fontWeight:'normal'}}>{localStorage.getItem('email')}</span></span>
-                            <span style={{textAlign:"justify"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat hic iste necessitatibus minima quos reiciendis! Fuga repudiandae.</span>
+                            
                         </div>
                     </div>
 

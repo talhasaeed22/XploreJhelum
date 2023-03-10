@@ -9,14 +9,15 @@ const Tulip = () => {
                 <div style={{ width: '280px' }}>
                     <SideBar />
                 </div>
-                <div className='d-flex flex-column w-100'>
+                <div className='d-flex flex-column w-100 ' style={{marginTop:"40px"}}>
                     <div className='d-flex justify-content-between w-100 px-5 align-items-center'>
                         <div className='d-flex flex-column'>
                             <span className='AdminTitle'>Hello, {localStorage.getItem('name')}</span>
                             <span className='AdminGreating'>Welcome back, nice to see you again</span>
                         </div>
                         <div className='profileImg'>
-                            <img src={logo} alt="Logo" className='img-fluid' />
+                            {/* <img src={logo} alt="Logo" className='img-fluid' /> */}
+                            <i className="fa fa-user" style={{fontSize:'30px'}} aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -32,7 +33,7 @@ const Tulip = () => {
                         </div>
                     </div>
 
-                    <div className="container ">
+                    {/* <div className="container ">
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
                                 <div className='px-5 py-5 text-center'>
@@ -69,7 +70,7 @@ const Tulip = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="pt-5 text-center" style={{ padding: '0 25%' }}>
                         <p style={{ fontSize: '14px' }}>In case of any query, resolve it immediately by giving us a call on <span style={{ color: '#C32128', fontWeight: 'bold' }}>01689 493 641</span> or email <span style={{ color: '#C32128', fontWeight: 'bold' }}>info@gmail.com</span> today.</p>

@@ -136,8 +136,7 @@ const HotelDetails = () => {
                         </div>
                         <div className="modal-body">
                             <div className="contianer">
-                                <h1 className='fs-2 fw-bold'>Hotel Name</h1>
-                                <p className="smallpara">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio ab dicta error aut voluptate cupiditate labor</p>
+                                <h1 className='fs-2 fw-bold'>{location.state.name}</h1>
                                 <p className='fs-5 fw-bold'>Please enter your information</p>
                             </div>
                             <div className='bookingForm'>
@@ -157,7 +156,7 @@ const HotelDetails = () => {
                                     <textarea value={details.address} onChange={onChange} name="address" rows={2} res id="address" placeholder='Enter your address'></textarea>
                                 </div>
                                 <div className='d-flex flex-column my-3'>
-                                    <label htmlFor="days">Package (45,000 per night)</label>
+                                    <label htmlFor="days">Package ({location.state.pernight + ' PKR'})</label>
                                     <input value={details.days} onChange={onChange} type="number" name="days" id="days" placeholder='Enter number of days' />
                                 </div>
                                 <div className="d-flex justify-content-between my-3">

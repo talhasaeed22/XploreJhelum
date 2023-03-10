@@ -51,11 +51,11 @@ const [loadng, setLoadng] = useState(false)
               <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'rgb(191 28 28' }}>Room No: </span>
               <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>{item.roomNumber}</span>
               <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'rgb(191 28 28' }}>Booking Date: </span>
-              <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>12/23/2222</span>
+              <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>{item.date}/{item.month}/{item.year}</span>
               <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'rgb(191 28 28' }}>Stay: </span>
               <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>{item.days} Days</span>
               <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'rgb(191 28 28' }}>Checkout Date: </span>
-              <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>23/23/2303</span>
+              <span style={{ fontSize: '17px', fontWeight: 'nprmal', color: 'black' }}>{parseInt(item.date) + parseInt(item.days)}/{item.month}/{item.year}</span>
             </div>
             <div className='d-flex flex-column gap-4'>
               <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'rgb(191 28 28' }}>Satus:  </span>
