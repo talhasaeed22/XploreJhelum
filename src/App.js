@@ -22,6 +22,7 @@ import Institutions from './Components/Institutions/Institutions'
 import InstitutionDetails from './Components/Institutions/InstitutionDetails';
 import Guests from './Admins/Guests';
 import Contact from './Components/Contact';
+import Booking from './Components/Hotels/Booking';
 const App = () => {
 
   
@@ -47,6 +48,8 @@ const App = () => {
           <Route exact path="/RestaurantDetails" element={<RestaurantDetails />}>
           </Route>
           <Route exact path="/HotelDetails" element={<HotelDetails />}>
+          </Route>
+          <Route exact path="/Booking" element={<Booking />}>
           </Route>
           <Route exact path="/PlacesDetails" element={<PlacesDetail />}>
           </Route>

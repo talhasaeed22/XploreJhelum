@@ -154,4 +154,16 @@ router.post('/getguests', async (req, res) => {
     }
 })
 
+router.post('/getAllRequest', async (req, res) => {
+    let success = false;
+    try {
+        const foundRequests = await booking.find({ email: req.body.email, status:"Pending" });
+        success = true
+        res.send({ requests: foundRequests, success: success });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send({ success: success, error: "Internal Server Error occurred" });
+    }
+})
+
 module.exports = router

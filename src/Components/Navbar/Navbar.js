@@ -45,6 +45,9 @@ const Navbar = () => {
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Hotels' || location.pathname === '/HotelDetails') && '2px solid black' }} aria-current="page" to="/Hotels">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Booking' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Booking' || location.pathname === '/HotelDetails') && '2px solid black' }} aria-current="page" to="/Booking">Bookings</Link>
+                            </li>
+                            <li className="nav-item mx-3">
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Restaurants' && 'active'}  `} aria-current="page" to="/Restaurants" style={{ borderBottom: (location.pathname === '/Restaurants' || location.pathname === '/RestaurantDetails') && '2px solid black' }}>Restaurants</Link>
                             </li>
                             <li className="nav-item mx-3">
@@ -57,16 +60,7 @@ const Navbar = () => {
                             <li className="nav-item mx-3">
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Contact' && 'active'}  `}  aria-current="page" to="/Contact"  style={{ borderBottom: (location.pathname === '/Contact' || location.pathname === '/Contact') && '2px solid black' }}>Feedback</Link>
                             </li>
-
-                            
-
-
                         </ul>
-
-                        {/* <div className='d-flex gap-2 align-items-center'>
-                            <img src={logo} alt="logo" className='img-fluid' width={30} />
-                            <span className={` fs-5 ${location.pathname === '/' ? 'text-light' : 'text-dark'}`}>Hello, <span className='fw-bold'>Talha</span></span>
-                        </div> */}
                         {!localStorage.getItem('token') ? <div id='nav-bbtn' className="d-flex">
                             <div className="d-flex gap-3" role="search">
                                 <button onClick={login} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Login</button>

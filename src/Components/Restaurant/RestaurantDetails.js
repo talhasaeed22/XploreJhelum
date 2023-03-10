@@ -36,31 +36,13 @@ const RestaurantDetails = (props) => {
                     })}
                 </div>
             </div>
-            {/* <div className="container my-2">
-                <div className="row my-3">
-                    <div className="col-md-6">
-                        <img src={location.state.image[1]} alt="hotel" className="img-fluid" />
-                    </div>
-                    <div className="col-md-6">
-                        <img src={location.state.image[2]} alt="hotel" className="img-fluid" />
-                    </div>
-                </div>
-                <div className="row my-3">
-                    <div className="col-md-4">
-                        <img src={location.state.image[3]} alt="hotel" className="img-fluid" />
-                    </div>
-                    {location.state.image[4] && <div className="col-md-4">
-                        <img src={location.state.image[4]} alt="hotel" className="img-fluid" />
-                    </div>}
-                   {location.state.image[5] &&  <div className="col-md-4">
-                        <img src={location.state.image[5]} alt="hotel" className="img-fluid" />
-                    </div>}
-                </div>
-            </div> */}
 
             <div className="container my-5">
-                <span style={{ color: 'rgb(191 28 28)', fontSize:30, fontWeight:'bold' }}>Location</span>
-                <img src={location.state.map} alt="map" className="img-fluid" />
+                <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Location</span>
+                <br />
+                <p style={{fontSize:"20px", textAlign:'center', margin:"auto", margin:'10px 0', fontWeight:'bold'}}>Click on the map to see details</p>
+                <br />
+                <a target='_blank' rel="noreferrer" href={location.state.link}><img src={location.state.map} alt="map" className="img-fluid" /></a>
             </div>
 
             <div className="container my-5 d-flex flex-column">

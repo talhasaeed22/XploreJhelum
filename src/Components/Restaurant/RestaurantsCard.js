@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const RestaurantsCard = (props) => {
     const nevigate = useNavigate();
     const routeChange = () => {
-        nevigate('/RestaurantDetails', { state: { name: props.name, image: props.image, map:props.map, contact:props.contact, desc:props.desc } })
+        nevigate('/RestaurantDetails', { state: { name: props.name, image: props.image, map:props.map, contact:props.contact, desc:props.desc, link:props.link } })
     }
     return (
         <>
