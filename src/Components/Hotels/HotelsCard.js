@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const HotelsCard = (props) => {
     const nevigate = useNavigate();
     const routeChange = () => {
-        nevigate('/HotelDetails', { state: { name: props.name, image:props.image, map:props.map, email:props.email, contact:props.contact, description:props.description, pernight:props.pernight ,link:props.link } })
+        nevigate('/HotelDetails', { state: { name: props.name, image:props.image, map:props.map, email:props.email, contact:props.contact, description:props.description, pernight:props.pernight ,link:props.link, feedback:props.feedback, hotelId:props.hotelId } })
     }
     return (
         <>

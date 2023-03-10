@@ -45,7 +45,7 @@ const Navbar = () => {
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Hotels' || location.pathname === '/HotelDetails') && '2px solid black' }} aria-current="page" to="/Hotels">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Booking' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Booking' || location.pathname === '/HotelDetails') && '2px solid black' }} aria-current="page" to="/Booking">Bookings</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Booking' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Booking' ) && '2px solid black' }} aria-current="page" to="/Booking">Bookings</Link>
                             </li>
                             <li className="nav-item mx-3">
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Restaurants' && 'active'}  `} aria-current="page" to="/Restaurants" style={{ borderBottom: (location.pathname === '/Restaurants' || location.pathname === '/RestaurantDetails') && '2px solid black' }}>Restaurants</Link>
