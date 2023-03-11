@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Styles/Footer.css'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -19,31 +19,41 @@ const Footer = () => {
         localStorage.removeItem('email');
         navigate('/Login');
     }
+
+    const [subsrcibe, setSubsrcibe] = useState(false)
+    useEffect(()=>{
+        setSubsrcibe(localStorage.getItem('subscribe'))
+    }, [])
+
+    const handleSubscribe = ()=>{
+        setSubsrcibe(!subsrcibe);
+        localStorage.setItem('subscribe', subsrcibe)
+    }
     return (
         <>
-            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname === '/Request' || location.pathname === '/Guests' || location.pathname==='/Profile' || location.pathname ==='/Signup' || location.pathname ==='/Admin' ) && 'd-none'} `}>
+            <div className={`contianer-fluid FooterMainContainer ${(location.pathname === '/Login' || location.pathname === '/Request' || location.pathname === '/Guests' || location.pathname === '/Profile' || location.pathname === '/Signup' || location.pathname === '/Admin') && 'd-none'} `}>
                 <div className="container innerContainer">
                     <div className='left'>
                         <div className="col">
                             <span className="heading">XploreJhelum</span>
-                            <span className="items" onClick={()=>{navigate('/')}} >Home</span>
+                            <span className="items" onClick={() => { navigate('/') }} >Home</span>
                             <span className="items">Services</span>
                             <span className="items">Contact</span>
                             <span className="items">About</span>
                         </div>
                         <div className="col">
                             <span className="heading">Services</span>
-                            <span className="items" onClick={()=>{navigate('/Hotels')}} >Hotels</span>
-                            <span className="items" onClick={()=>{navigate('/Restaurants')}} >Resturents</span>
-                            <span className="items"  onClick={()=>{navigate('/Institutions')}} >Institutions</span>
-                            <span className="items"  onClick={()=>{navigate('/Places')}} >Places</span>
+                            <span className="items" onClick={() => { navigate('/Hotels') }} >Hotels</span>
+                            <span className="items" onClick={() => { navigate('/Restaurants') }} >Resturents</span>
+                            <span className="items" onClick={() => { navigate('/Institutions') }} >Institutions</span>
+                            <span className="items" onClick={() => { navigate('/Places') }} >Places</span>
 
                         </div>
                         {!localStorage.getItem('token') ? <div className="col">
                             <span className="heading">Register</span>
                             <span className="items" onClick={login}>Login</span>
                             <span className="items" onClick={signup}>Signup</span>
-                            
+
 
                         </div> : <></>}
                     </div>
@@ -51,11 +61,17 @@ const Footer = () => {
                     <div className="right">
                         <div className="spanheading">
                             <span>It&apos;s safe. It&apos;s easy.</span>
-                            <span>It&apos;s <span style={{color:'#bfbfbf'}}>XploreJhelum</span></span>
-                        
+                            <span>It&apos;s <span style={{ color: '#bfbfbf' }}>XploreJhelum</span></span>
 
-                        {!localStorage.getItem('token') ? <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor:'black', borderRadius:'7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button>: <label style={{ fontSize: '1.2rem', fontWeight:'bold', color:'white' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
+
+                            {!localStorage.getItem('token') ? <button onClick={login} className='servicesButton' style={{ fontSize: '16px', backgroundColor: 'black', borderRadius: '7px' }}>Login To Continue<i className="fa fa-long-arrow-right px-1" aria-hidden="true"></i></button> : <label style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft: '12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
+                            {localStorage.getItem('token') && <div>
+                                <button style={{ marginTop: '10px', fontSize:"20px", backgroundColor:subsrcibe ? 'white' : 'black', color:subsrcibe ? 'black' : 'white' }} className='navBtn' onClick={handleSubscribe} id="">{subsrcibe ? 'Unubscirbe' : 'Subscribe'}</button>
+                            </div>}
                         </div>
+
+
+
                         <div className="icons">
                             <i className="fa fa-facebook-square" aria-hidden="true"></i>
                             <i className="fa fa-twitter" aria-hidden="true"></i>
