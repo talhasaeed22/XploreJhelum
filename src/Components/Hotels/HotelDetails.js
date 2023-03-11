@@ -75,7 +75,7 @@ const HotelDetails = () => {
     const [commentsData, setCommentsData] = useState({name:localStorage.getItem('name'), comment:''})
 
     const onCommentChange = (e)=>{
-        setCommentsData({ ...details, [e.target.name]: e.target.value })
+        setCommentsData({ ...commentsData, [e.target.name]: e.target.value })
     }
     
     const [list, setList] = useState([])

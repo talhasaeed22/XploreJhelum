@@ -25,7 +25,7 @@ const Places = () => {
             const postItem = [];
             const querySnapshot = await getDocs(collection(db, "Places"));
             querySnapshot.forEach((doc) => {
-                const { name, image, number, map, desc, link } = doc.data();
+                const { name, image, number, map, desc, link, feedback } = doc.data();
                 postItem.push({
                     id:doc.id,
                     name: name,
@@ -33,7 +33,8 @@ const Places = () => {
                     number: number,
                     map:map,
                     desc,
-                    link
+                    link,
+                    feedback
                 });
             });
             console.log(postItem)
@@ -57,7 +58,7 @@ const Places = () => {
                         <div className="row ">
                             {posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <PlacesCard link={item.link} desc={item.desc} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <PlacesCard placeId={item.id} feedback={item.feedback} link={item.link} desc={item.desc} map={item.map} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
                            
