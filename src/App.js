@@ -24,6 +24,7 @@ import Guests from './Admins/Guests';
 import Contact from './Components/Contact';
 import Booking from './Components/Hotels/Booking';
 import EditProfile from './Components/EditProfile';
+import Recommendations from './Components/Recommendation';
 const App = () => {
 
   
@@ -45,6 +46,8 @@ const App = () => {
           <Route exact path="/Login" element={<Login />}>
           </Route>
           <Route exact path="/Signup" element={<SIgnup />}>
+          </Route>
+          <Route exact path="/Recommendations" element={<Recommendations />}>
           </Route>
           <Route exact path="/RestaurantDetails" element={<RestaurantDetails />}>
           </Route>

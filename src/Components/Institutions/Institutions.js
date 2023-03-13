@@ -24,7 +24,7 @@ const [loading, setLoading] = useState(false)
             const querySnapshot = await getDocs(collection(db, "Institutions"));
             querySnapshot.forEach((doc) => {
                 
-                const { name, image, number, contact, email, desc, feedback } = doc.data();
+                const { name, image, number, contact, email, desc, feedback, map, link } = doc.data();
                 postItem.push({
                     id:doc.id,
                     name: name,
@@ -33,7 +33,9 @@ const [loading, setLoading] = useState(false)
                     contact:contact,
                     email:email,
                     desc,
-                    feedback
+                    feedback,
+                    map, 
+                    link
                 });
             });
             console.log(postItem)
@@ -58,7 +60,7 @@ const [loading, setLoading] = useState(false)
                         <div className="row ">
                             {loading ? <div className='d-flex align-items-center my-5 justify-content-center'><LoadingSpinner/></div> : posts.map((item) => {
                                 return <div key={item.id} className="col-md-4 my-3 col-sm-6 col-12">
-                                    <InstitutionCard InstitutionId={item.id} feedback={item.feedback} desc={item.desc} contact={item.contact} email={item.email} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
+                                    <InstitutionCard map={item.map} link={item.link} InstitutionId={item.id} feedback={item.feedback} desc={item.desc} contact={item.contact} email={item.email} key={item.id} image={item.image} name={item.name} feature1={pool} feature2={drink} feature3={breakfast} />
                                 </div>
                             })}
                            

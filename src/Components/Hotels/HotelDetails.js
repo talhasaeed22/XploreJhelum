@@ -154,6 +154,7 @@ const HotelDetails = () => {
                     <span className='fw-bold' style={{ color: 'rgb(191 28 28)' }}>PKR {location.state.pernight}</span>
                 </div>
             </div>
+            
             <div className="container my-5">
                 <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Location</span>
                 <br />

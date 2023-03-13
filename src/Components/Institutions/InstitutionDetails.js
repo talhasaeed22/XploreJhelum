@@ -112,27 +112,43 @@ const InstitutionDetails = () => {
                 </div>
             </div> */}
 
+            <div className="container my-5">
+                <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Location</span>
+                <br />
+                <p style={{ fontSize: "20px", textAlign: 'center', margin: "auto", margin: '10px 0', fontWeight: 'bold' }}>Click on the map to see details</p>
+                <br />
+                <a target='_blank' rel="noreferrer" href={location.state.link}><img src={location.state.map} alt="map" className="img-fluid" /></a>
+            </div>
+
             <div className="container my-3">
                 <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Feedback</span>
-                
+
                 <div className='px-5 py-4 d-flex flex-row gap-5'>
                     <i onClick={() => {
                         setError(true);
                         setMessage1('Appologies');
                         setMessage2('We are Appologize and we will definately improve our services');
                     }} className="fa fa-star starrr" aria-hidden="true"></i>
-                    <i onClick={() => { setError(true);
+                    <i onClick={() => {
+                        setError(true);
                         setMessage1('Appologies');
-                        setMessage2('We are Appologize and we will definately improve our services');}} className="fa fa-star starrr" aria-hidden="true"></i>
-                    <i onClick={() => {setError(true);
+                        setMessage2('We are Appologize and we will definately improve our services');
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {
+                        setError(true);
                         setMessage1('Thanks');
-                        setMessage2(`Thank You For ratting ${location.state.name} , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
-                    <i onClick={() => { setError(true);
+                        setMessage2(`Thank You For ratting ${location.state.name} , we will definately improve our services`);
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {
+                        setError(true);
                         setMessage1('Thanks');
-                        setMessage2(`Thank You For ratting ${location.state.name} 4 stars , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
-                    <i onClick={() => {setError(true);
+                        setMessage2(`Thank You For ratting ${location.state.name} 4 stars , we will definately improve our services`);
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {
+                        setError(true);
                         setMessage1('Thanks');
-                        setMessage2(`Thank You For ratting ${location.state.name} 5 stars `); }} className="fa fa-star starrr" aria-hidden="true"></i>
+                        setMessage2(`Thank You For ratting ${location.state.name} 5 stars `);
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
 
                 </div>
                 <div className='px-5 py-2' style={{ backgroundColor: 'white', boxShadow: '0px 5px 7px 0px rgb(114 114 114 / 25%)', borderRadius: "10px", borderTop: '1px solid lightgray' }}>
