@@ -26,8 +26,8 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav  className={`navbar navbar-expand-lg ${(location.pathname === '/Login'|| location.pathname==='/Profile'  || location.pathname === '/Signup' || location.pathname === '/Guests' || location.pathname === '/Admin' || location.pathname === '/Request') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)', position:'sticky', top:'0px', zIndex:'1000'}}>
-                <div className="container" >
+            <nav className={`navbar navbar-expand-lg ${(location.pathname === '/Login' || location.pathname === '/Profile' || location.pathname === '/Signup' || location.pathname === '/Guests' || location.pathname === '/Admin' || location.pathname === '/Request') && 'd-none'}  `} style={{ backgroundColor: location.pathname === '/' ? 'rgb(191 28 28)' : 'white', borderBottom: '1px solid rgb(191 28 28)', position: 'sticky', top: '0px', zIndex: '1000' }}>
+                <div className="container-fluid px-5" >
 
                     <div className='d-flex align-items-center'>
                         <img src={location.pathname === '/' ? logo : Coloredlogo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
@@ -45,20 +45,20 @@ const Navbar = () => {
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Hotels' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Hotels' || location.pathname === '/HotelDetails') && '2px solid black' }} aria-current="page" to="/Hotels">Hotels</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Booking' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Booking' ) && '2px solid black' }} aria-current="page" to="/Booking">Bookings</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Booking' && 'active'}  `} style={{ borderBottom: (location.pathname === '/Booking') && '2px solid black' }} aria-current="page" to="/Booking">Bookings</Link>
                             </li>
                             <li className="nav-item mx-3">
                                 <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Restaurants' && 'active'}  `} aria-current="page" to="/Restaurants" style={{ borderBottom: (location.pathname === '/Restaurants' || location.pathname === '/RestaurantDetails') && '2px solid black' }}>Restaurants</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Institutions' && 'active'}  `}  aria-current="page" to="/Institutions" style={{ borderBottom: (location.pathname === '/Institutions' || location.pathname === '/InstitutionDetails') && '2px solid black' }}>Institutions</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Institutions' && 'active'}  `} aria-current="page" to="/Institutions" style={{ borderBottom: (location.pathname === '/Institutions' || location.pathname === '/InstitutionDetails') && '2px solid black' }}>Institutions</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Places' && 'active'}  `}  aria-current="page" to="/Places"  style={{ borderBottom: (location.pathname === '/Places' || location.pathname === '/PlacesDetails') && '2px solid black' }}>Places</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Places' && 'active'}  `} aria-current="page" to="/Places" style={{ borderBottom: (location.pathname === '/Places' || location.pathname === '/PlacesDetails') && '2px solid black' }}>Places</Link>
                             </li>
 
                             <li className="nav-item mx-3">
-                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Contact' && 'active'}  `}  aria-current="page" to="/Contact"  style={{ borderBottom: (location.pathname === '/Contact' || location.pathname === '/Contact') && '2px solid black' }}>Feedback</Link>
+                                <Link className={`nav-link text-${location.pathname === '/' ? 'light' : 'dark'} ${location.pathname === '/Contact' && 'active'}  `} aria-current="page" to="/Contact" style={{ borderBottom: (location.pathname === '/Contact' || location.pathname === '/Contact') && '2px solid black' }}>Contact</Link>
                             </li>
                         </ul>
                         {!localStorage.getItem('token') ? <div id='nav-bbtn' className="d-flex">
@@ -66,7 +66,10 @@ const Navbar = () => {
                                 <button onClick={login} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Login</button>
                                 <button onClick={signup} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} type="submit">Signup</button>
                             </div>
-                        </div> : <label className={location.pathname === '/' ? 'text-light' : 'text-dark'} style={{ fontSize: '1.2rem', fontWeight:'bold' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft:'12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label>}
+                        </div> : <><i onClick={()=>{
+                            navigate('EditProfile')
+                        }} className="fa fa-user me-3" style={{ fontSize: '30px', cursor:'pointer' }} aria-hidden="true"></i>
+                            <label className={location.pathname === '/' ? 'text-light' : 'text-dark'} style={{ fontSize: '1.2rem', fontWeight: 'bold' }}> Hello, {localStorage.getItem('name')} <button style={{ padding: '9px 19px', marginLeft: '12px' }} onClick={handleLogout} className={location.pathname === '/' ? 'navBtn' : 'whiteButton'} id="">Logout</button> </label></>}
                     </div>
                 </div>
             </nav>

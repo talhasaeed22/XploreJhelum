@@ -23,6 +23,7 @@ import InstitutionDetails from './Components/Institutions/InstitutionDetails';
 import Guests from './Admins/Guests';
 import Contact from './Components/Contact';
 import Booking from './Components/Hotels/Booking';
+import EditProfile from './Components/EditProfile';
 const App = () => {
 
   
@@ -60,6 +61,8 @@ const App = () => {
           <Route exact path="/InstitutionDetails" element={<InstitutionDetails />}>
           </Route>
           <Route exact path="/Contact" element={<Contact />}>
+          </Route>
+          <Route exact path="/EditProfile" element={<EditProfile />}>
           </Route>
 
           {/* //Admin Routes */}

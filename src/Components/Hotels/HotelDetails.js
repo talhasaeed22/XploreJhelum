@@ -6,6 +6,7 @@ import Alert from '../Models/Alert';
 import { getDocs, collection, updateDoc, doc } from 'firebase/firestore'
 import { db } from '../../Config/Firebase.config'
 
+import './Hotels.css'
 const HotelDetails = () => {
     const [error, setError] = useState(false)
     const [message1, setMessage1] = useState('');
@@ -72,32 +73,32 @@ const HotelDetails = () => {
 
     }
 
-    const [commentsData, setCommentsData] = useState({name:localStorage.getItem('name'), comment:''})
+    const [commentsData, setCommentsData] = useState({ name: localStorage.getItem('name'), comment: '' })
 
-    const onCommentChange = (e)=>{
+    const onCommentChange = (e) => {
         setCommentsData({ ...commentsData, [e.target.name]: e.target.value })
     }
-    
+
     const [list, setList] = useState([])
     const [commentLoading, setCommentLoading] = useState(false)
 
-    const getComments = async ()=>{
+    const getComments = async () => {
 
         setCommentLoading(true)
-        
-         const querySnapshot = await getDocs(collection(db, "Hotels"));
-            querySnapshot.forEach((doc) => {
-                if(doc.id === location.state.hotelId){
-                    const { feedback } = doc.data();
-                    setList(feedback)
-                }
-            });
-            
-            setCommentLoading(false)
+
+        const querySnapshot = await getDocs(collection(db, "Hotels"));
+        querySnapshot.forEach((doc) => {
+            if (doc.id === location.state.hotelId) {
+                const { feedback } = doc.data();
+                setList(feedback)
+            }
+        });
+
+        setCommentLoading(false)
 
     }
 
-    const handleComments = async (key)=>{
+    const handleComments = async (key) => {
         // const querySnapshot = await getDocs(collection(db, "Hotels"));
         //     querySnapshot.forEach((doc) => {
         //         if(doc.id === key){
@@ -108,19 +109,19 @@ const HotelDetails = () => {
         const washingtonRef = doc(db, "Hotels", key);
 
         await updateDoc(washingtonRef, {
-          feedback: [...list , {
-            'name':localStorage.getItem('name'),
-            'comment':commentsData.comment
+            feedback: [...list, {
+                'name': localStorage.getItem('name'),
+                'comment': commentsData.comment
 
-          }]
-        }).then(()=>{
+            }]
+        }).then(() => {
             setUpdated(!updated)
-            setCommentsData({name:'', comment:''})
-            
+            setCommentsData({ name: '', comment: '' })
+
             console.log('Success')
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err)
-        }) ;
+        });
     }
 
     return (
@@ -169,13 +170,32 @@ const HotelDetails = () => {
                 </div>
             </div>
 
-            <div className="container my-3">
-                <button className="readmore mx-2" onClick={openModal}>Book Now</button>
-                <button className="readmore mx-2" onClick={() => { navigate('/Hotels') }}>Go Back</button>
-            </div>
+
 
             <div className="container my-3">
                 <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Feedback</span>
+
+                <div className='px-5 py-4 d-flex flex-row gap-5'>
+                    <i onClick={() => {
+                        setError(true);
+                        setMessage1('Appologies');
+                        setMessage2('We are Appologize and we will definately improve our services');
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => { setError(true);
+                        setMessage1('Appologies');
+                        setMessage2('We are Appologize and we will definately improve our services');}} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => { setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} 4 stars , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} 5 stars `); }} className="fa fa-star starrr" aria-hidden="true"></i>
+
+                </div>
+
                 <div className='px-5 py-2' style={{ backgroundColor: 'white', boxShadow: '0px 5px 7px 0px rgb(114 114 114 / 25%)', borderRadius: "10px", borderTop: '1px solid lightgray' }}>
                     {commentLoading ? <div>Loading</div> : list.map((feedback) => {
                         return <div className='d-flex flex-row gap-3 my-2' style={{ alignItems: 'center' }}>
@@ -183,8 +203,8 @@ const HotelDetails = () => {
                                 <i className="fa fa-user" style={{ fontSize: '30px' }} aria-hidden="true"></i>
                             </div>
                             <div className='d-flex flex-column ' >
-                                <span style={{ fontSize: '15px', color: 'black', fontWeight:'bold', }}>{feedback.name}</span>
-                                <span style={{ fontSize: "14px", color: 'black', paddingRight:'18px' }}>{feedback.comment}</span>
+                                <span style={{ fontSize: '15px', color: 'black', fontWeight: 'bold', }}>{feedback.name}</span>
+                                <span style={{ fontSize: "14px", color: 'black', paddingRight: '18px' }}>{feedback.comment}</span>
                             </div>
                         </div>
                     })}
@@ -193,20 +213,25 @@ const HotelDetails = () => {
                         <div>
                             <i className="fa fa-user" style={{ fontSize: '30px' }} aria-hidden="true"></i>
                         </div>
-                        <div onClick={()=>{
-                                if(!localStorage.getItem('token')){
-                                    alert('Please Login to Send Feedback')
-                                }
-                            }} className='d-flex flex-column ' style={{ width: '100%' }} >
-                            <input value={commentsData.comment} onChange={onCommentChange} disabled={!localStorage.getItem('token')}  style={{ border: '1px solid lightgray', borderRadius: "12px", width: "100%", padding: '12px' }} type="text" name="comment" id="comment" placeholder='Enter Feedback' />
+                        <div onClick={() => {
+                            if (!localStorage.getItem('token')) {
+                                alert('Please Login to Send Feedback')
+                            }
+                        }} className='d-flex flex-column ' style={{ width: '100%' }} >
+                            <input value={commentsData.comment} onChange={onCommentChange} disabled={!localStorage.getItem('token')} style={{ border: '1px solid lightgray', borderRadius: "12px", width: "100%", padding: '12px' }} type="text" name="comment" id="comment" placeholder='Enter Feedback' />
                         </div>
-                        <div onClick={()=>{handleComments(location.state.hotelId)}} className='d-flex flex-column ' style={{ cursor: 'pointer' }}>
-                            <i className="fa fa-paper-plane" style={{fontSize:"20px"}} aria-hidden="true"></i>
+                        <div onClick={() => { handleComments(location.state.hotelId) }} className='d-flex flex-column ' style={{ cursor: 'pointer' }}>
+                            <i className="fa fa-paper-plane" style={{ fontSize: "20px" }} aria-hidden="true"></i>
                         </div>
                     </div>
 
 
                 </div>
+            </div>
+
+            <div className="container my-3">
+                <button className="readmore mx-2" onClick={openModal}>Book Now</button>
+                <button className="readmore mx-2" onClick={() => { navigate('/Hotels') }}>Go Back</button>
             </div>
 
             <div className="container">

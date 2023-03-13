@@ -3,9 +3,13 @@ import About from '../About'
 import { useLocation, useNavigate, } from 'react-router-dom';
 import { getDocs, collection, updateDoc, doc } from 'firebase/firestore'
 import { db } from '../../Config/Firebase.config'
+import Alert from '../Models/Alert';
 
 const InstitutionDetails = () => {
     const navigate = useNavigate();
+    const [error, setError] = useState(false)
+    const [message1, setMessage1] = useState('');
+    const [message2, setMessage2] = useState('')
     const location = useLocation();
     const [updated, setUpdated] = useState(false)
 
@@ -110,6 +114,27 @@ const InstitutionDetails = () => {
 
             <div className="container my-3">
                 <span style={{ color: 'rgb(191 28 28)', fontSize: 30, fontWeight: 'bold' }}>Feedback</span>
+                
+                <div className='px-5 py-4 d-flex flex-row gap-5'>
+                    <i onClick={() => {
+                        setError(true);
+                        setMessage1('Appologies');
+                        setMessage2('We are Appologize and we will definately improve our services');
+                    }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => { setError(true);
+                        setMessage1('Appologies');
+                        setMessage2('We are Appologize and we will definately improve our services');}} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => { setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} 4 stars , we will definately improve our services`); }} className="fa fa-star starrr" aria-hidden="true"></i>
+                    <i onClick={() => {setError(true);
+                        setMessage1('Thanks');
+                        setMessage2(`Thank You For ratting ${location.state.name} 5 stars `); }} className="fa fa-star starrr" aria-hidden="true"></i>
+
+                </div>
                 <div className='px-5 py-2' style={{ backgroundColor: 'white', boxShadow: '0px 5px 7px 0px rgb(114 114 114 / 25%)', borderRadius: "10px", borderTop: '1px solid lightgray' }}>
                     {commentLoading ? <div>Loading</div> : list.map((feedback) => {
                         return <div className='d-flex flex-row gap-3 my-2' style={{ alignItems: 'center' }}>
@@ -155,6 +180,8 @@ const InstitutionDetails = () => {
             <div className="container">
                 <About />
             </div>
+            {error && <Alert message1={message1} message2={message2} setError={setError} />}
+
         </>
     )
 }
