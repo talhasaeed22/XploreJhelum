@@ -14,6 +14,7 @@ const HotelDetails = () => {
     const [updated, setUpdated] = useState(false)
     useEffect(() => {
         window.scrollTo(0, 0)
+        console.log(location.state.name)
     }, [])
     const location = useLocation();
     const navigate = useNavigate();
